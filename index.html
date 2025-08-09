@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="LIA Procurement Inc. - Indigenous-led firm specializing in public sector procurement strategies and contract management across Canada">
   <title>LIA Procurement Inc. - Securing Contracts, Delivering Results</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,15 +11,15 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #0A2463;
-      --secondary: #3E92CC;
-      --accent: #D8315B;
+      --primary: #000000;
+      --secondary: #333333;
+      --accent: #555555;
       --light: #FFFFFF;
-      --dark: #1E1E24;
-      --medium-gray: #6D6D6D;
-      --light-gray: #F8F9FA;
-      --border: #E0E0E0;
-      --overlay: rgba(10, 36, 99, 0.9);
+      --dark: #222222;
+      --medium-gray: #777777;
+      --light-gray: #F5F5F5;
+      --border: #EEEEEE;
+      --overlay: rgba(0, 0, 0, 0.7);
       --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
     
@@ -68,14 +68,14 @@
     }
     
     .btn-primary {
-      background-color: var(--accent);
+      background-color: var(--dark);
       color: var(--light);
-      border: 2px solid var(--accent);
+      border: 2px solid var(--dark);
     }
     
     .btn-primary:hover {
       background-color: transparent;
-      color: var(--accent);
+      color: var(--dark);
     }
     
     .btn-outline {
@@ -86,7 +86,7 @@
     
     .btn-outline:hover {
       background-color: var(--light);
-      color: var(--primary);
+      color: var(--dark);
     }
     
     .section-padding {
@@ -117,7 +117,6 @@
       text-align: center;
     }
     
-    /* Header */
     header {
       position: fixed;
       top: 0;
@@ -161,10 +160,6 @@
       margin-right: 0.8rem;
     }
     
-    .logo span {
-      color: var(--accent);
-    }
-    
     nav ul {
       display: flex;
       list-style: none;
@@ -191,7 +186,7 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: var(--accent);
+      background-color: var(--dark);
       transition: var(--transition);
     }
     
@@ -209,7 +204,6 @@
       cursor: pointer;
     }
     
-    /* Hero Section */
     .hero {
       height: 100vh;
       min-height: 700px;
@@ -254,7 +248,6 @@
       font-size: 3.5rem;
       margin-bottom: 1.5rem;
       line-height: 1.2;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     }
     
     .hero p {
@@ -273,21 +266,11 @@
       margin-top: 2rem;
     }
     
-    /* About Section */
-    .about-section {
-      position: relative;
-      overflow: hidden;
-    }
-    
     .about-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
       align-items: center;
-    }
-    
-    .about-text {
-      position: relative;
     }
     
     .about-text h3 {
@@ -303,7 +286,7 @@
     
     .highlight-box {
       background-color: var(--light-gray);
-      border-left: 4px solid var(--accent);
+      border-left: 4px solid var(--dark);
       padding: 2rem;
       margin: 2rem 0;
       font-style: italic;
@@ -315,7 +298,7 @@
       position: absolute;
       font-size: 5rem;
       font-family: 'Playfair Display', serif;
-      color: rgba(216, 49, 91, 0.1);
+      color: rgba(0, 0, 0, 0.1);
       top: -1rem;
       left: 0.5rem;
       line-height: 1;
@@ -339,7 +322,6 @@
       transform: scale(1.03);
     }
     
-    /* Services Section */
     .services-section {
       background-color: var(--light-gray);
     }
@@ -394,7 +376,6 @@
       margin-bottom: 1.5rem;
     }
     
-    /* Sectors Section */
     .sectors-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -419,12 +400,12 @@
       width: 80px;
       height: 80px;
       margin: 0 auto 1.5rem;
-      background-color: rgba(62, 146, 204, 0.1);
+      background-color: var(--light-gray);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--secondary);
+      color: var(--dark);
       font-size: 2rem;
     }
     
@@ -439,7 +420,6 @@
       font-size: 0.95rem;
     }
     
-    /* Partnership Section */
     .partnership-section {
       background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: var(--light);
@@ -494,11 +474,6 @@
       margin-bottom: 1.5rem;
     }
     
-    /* Contact Section */
-    .contact-section {
-      position: relative;
-    }
-    
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -521,12 +496,12 @@
     .contact-icon {
       width: 50px;
       height: 50px;
-      background-color: rgba(62, 146, 204, 0.1);
+      background-color: var(--light-gray);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--secondary);
+      color: var(--dark);
       font-size: 1.2rem;
       flex-shrink: 0;
     }
@@ -538,7 +513,7 @@
     }
     
     .contact-text a:hover {
-      color: var(--accent);
+      color: var(--dark);
     }
     
     .contact-form {
@@ -563,8 +538,8 @@
     
     .form-control:focus {
       outline: none;
-      border-color: var(--secondary);
-      box-shadow: 0 0 0 3px rgba(62, 146, 204, 0.2);
+      border-color: var(--dark);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
     }
     
     textarea.form-control {
@@ -586,7 +561,6 @@
       border: none;
     }
     
-    /* Social Media */
     .social-section {
       background-color: var(--light-gray);
       text-align: center;
@@ -604,7 +578,7 @@
       height: 50px;
       border-radius: 50%;
       background-color: var(--light);
-      color: var(--primary);
+      color: var(--dark);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -616,25 +590,9 @@
     .social-link:hover {
       transform: translateY(-5px);
       color: var(--light);
+      background-color: var(--dark);
     }
     
-    .social-link.facebook:hover {
-      background-color: #1877F2;
-    }
-    
-    .social-link.linkedin:hover {
-      background-color: #0077B5;
-    }
-    
-    .social-link.twitter:hover {
-      background-color: #1DA1F2;
-    }
-    
-    .social-link.whatsapp:hover {
-      background-color: #25D366;
-    }
-    
-    /* Footer */
     footer {
       background-color: var(--primary);
       color: var(--light);
@@ -662,7 +620,7 @@
       left: 0;
       width: 50px;
       height: 2px;
-      background-color: var(--accent);
+      background-color: var(--light);
     }
     
     .footer-col p {
@@ -682,12 +640,13 @@
     .footer-links a {
       opacity: 0.8;
       font-size: 0.95rem;
-      transition: var(--transition);
-    }
-    
+      transition: var(--transition
+	  Here's the continuation of the code:
+
+```html
     .footer-links a:hover {
       opacity: 1;
-      color: var(--accent);
+      color: var(--light);
       padding-left: 5px;
     }
     
@@ -702,7 +661,6 @@
       font-size: 0.9rem;
     }
     
-    /* Responsive Styles */
     @media (max-width: 992px) {
       .hero h1 {
         font-size: 3rem;
@@ -811,7 +769,6 @@
       }
     }
     
-    /* Animations */
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -841,13 +798,12 @@
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header id="header">
     <div class="container">
       <div class="header-container">
         <a href="#" class="logo">
-          <img src="https://via.placeholder.com/40x40" alt="LIA Procurement Logo">
-          LIA <span>Procurement</span>
+          <img src="https://via.placeholder.com/40x40" alt="LIA Procurement Inc. Logo">
+          LIA Procurement Inc.
         </a>
         
         <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -860,7 +816,7 @@
           </button>
           <ul>
             <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About Us</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#sectors">Sectors</a></li>
             <li><a href="#partnership">Partnership</a></li>
@@ -871,7 +827,6 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero" id="home">
     <video autoplay muted loop class="hero-video">
       <source src="https://assets.mixkit.co/videos/preview/mixkit-business-meeting-in-a-modern-office-space-4475-large.mp4" type="video/mp4">
@@ -887,11 +842,10 @@
     </div>
   </section>
 
-  <!-- About Section -->
   <section class="about-section section-padding" id="about">
     <div class="container">
       <div class="section-title animate">
-        <h2>About Our Company</h2>
+        <h2>About LIA Procurement Inc.</h2>
         <div class="divider"></div>
       </div>
       
@@ -901,26 +855,25 @@
           <p>LIA Procurement Inc. is an Indigenous-owned company specializing in public sector procurement at federal, provincial, and municipal levels across Canada. We actively participate in public tenders and government solicitations, serving as both prime contractor and strategic intermediary.</p>
           
           <div class="highlight-box">
-            We built this company to solve the very challenges we once faced in our own communities. Today, we don't just deliver solutions — we honor trust, uplift voices, and walk forward together, one partnership at a time.
+            We built LIA Procurement Inc. to solve the very challenges we once faced in our own communities. Today, we don't just deliver solutions — we honor trust, uplift voices, and walk forward together, one partnership at a time.
           </div>
           
           <p>Our flexible, partnership-driven model allows us to match the right expertise to each opportunity, ensuring successful outcomes for government clients and business partners alike. We bring forward Indigenous values of respect, reciprocity, and relationship-building in all our engagements.</p>
         </div>
         
         <div class="about-image animate delay-2">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="LIA Procurement team meeting">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="LIA Procurement Inc. team meeting">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
   <section class="services-section section-padding" id="services">
     <div class="container">
       <div class="section-title animate">
         <h2>Our Services</h2>
         <div class="divider"></div>
-        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto;">We provide comprehensive procurement solutions tailored to your needs in the public sector marketplace.</p>
+        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto;">LIA Procurement Inc. provides comprehensive procurement solutions tailored to your needs in the public sector marketplace.</p>
       </div>
       
       <div class="services-grid">
@@ -960,13 +913,12 @@
     </div>
   </section>
 
-  <!-- Sectors Section -->
   <section class="section-padding" id="sectors">
     <div class="container">
       <div class="section-title animate">
         <h2>Sectors & Capabilities</h2>
         <div class="divider"></div>
-        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto;">We serve diverse sectors with specialized expertise in public procurement.</p>
+        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto;">LIA Procurement Inc. serves diverse sectors with specialized expertise in public procurement.</p>
       </div>
       
       <div class="sectors-grid">
@@ -1005,38 +957,36 @@
     </div>
   </section>
 
-  <!-- Partnership Section -->
   <section class="partnership-section section-padding" id="partnership">
     <div class="container">
       <div class="section-title animate">
-        <h2>Partner With Us</h2>
+        <h2>Partner With LIA Procurement Inc.</h2>
         <div class="divider"></div>
-        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto; opacity: 0.9;">Join forces with LIA Procurement to unlock public sector opportunities through strategic collaboration.</p>
+        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto; opacity: 0.9;">Join forces with LIA Procurement Inc. to unlock public sector opportunities through strategic collaboration.</p>
       </div>
       
       <div class="partnership-grid">
         <div class="partnership-card animate delay-1">
           <h3>For Government Clients</h3>
-          <p>We deliver reliable, compliant, and community-conscious solutions that meet public sector standards and support Indigenous economic participation through our unique procurement advantages.</p>
+          <p>LIA Procurement Inc. delivers reliable, compliant, and community-conscious solutions that meet public sector standards and support Indigenous economic participation through our unique procurement advantages.</p>
           <a href="#contact" class="btn btn-outline" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;">Contact Our Team</a>
         </div>
         
         <div class="partnership-card animate delay-2">
           <h3>For Businesses</h3>
-          <p>Gain access to our expertise, networks, and proven strategies to successfully enter and scale within Canada's public procurement ecosystem through our Indigenous partnership model.</p>
+          <p>Gain access to LIA Procurement Inc.'s expertise, networks, and proven strategies to successfully enter and scale within Canada's public procurement ecosystem through our Indigenous partnership model.</p>
           <a href="#contact" class="btn btn-outline" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;">Explore Partnership</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section class="contact-section section-padding" id="contact">
     <div class="container">
       <div class="section-title animate">
-        <h2>Get In Touch</h2>
+        <h2>Contact LIA Procurement Inc.</h2>
         <div class="divider"></div>
-        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto;">Contact us to discuss how we can support your public procurement needs.</p>
+        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto;">Contact LIA Procurement Inc. to discuss how we can support your public procurement needs.</p>
       </div>
       
       <div class="contact-container">
@@ -1084,16 +1034,16 @@
           </div>
           
           <div class="social-links">
-            <a href="https://www.facebook.com/liaprocurement" class="social-link facebook" target="_blank" aria-label="Facebook">
+            <a href="https://www.facebook.com/liaprocurement" class="social-link" target="_blank" aria-label="Facebook">
               <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="https://www.linkedin.com/company/liaprocurement" class="social-link linkedin" target="_blank" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/company/liaprocurement" class="social-link" target="_blank" aria-label="LinkedIn">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://twitter.com/liaprocurement" class="social-link twitter" target="_blank" aria-label="Twitter">
+            <a href="https://twitter.com/liaprocurement" class="social-link" target="_blank" aria-label="Twitter">
               <i class="fab fa-twitter"></i>
             </a>
-            <a href="https://wa.me/12043903306" class="social-link whatsapp" target="_blank" aria-label="WhatsApp">
+            <a href="https://wa.me/12043903306" class="social-link" target="_blank" aria-label="WhatsApp">
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>
@@ -1113,8 +1063,8 @@
             <div class="form-group">
               <textarea class="form-control" placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-          </form>
+            <button type="submit" class="btn btn-primary" style="width:
+			            </form>
         </div>
       </div>
       
@@ -1124,41 +1074,39 @@
     </div>
   </section>
 
-  <!-- Social Media Section -->
   <section class="social-section section-padding">
     <div class="container">
       <div class="section-title animate">
-        <h2>Connect With Us</h2>
+        <h2>Connect With LIA Procurement Inc.</h2>
         <div class="divider"></div>
-        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto;">Follow us for the latest updates on public procurement opportunities and insights.</p>
+        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto;">Follow LIA Procurement Inc. for the latest updates on public procurement opportunities and insights.</p>
       </div>
       
       <div class="social-links">
-        <a href="https://www.facebook.com/liaprocurement" class="social-link facebook" target="_blank" aria-label="Facebook">
+        <a href="https://www.facebook.com/liaprocurement" class="social-link" target="_blank" aria-label="Facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="https://www.linkedin.com/company/liaprocurement" class="social-link linkedin" target="_blank" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/company/liaprocurement" class="social-link" target="_blank" aria-label="LinkedIn">
           <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="https://twitter.com/liaprocurement" class="social-link twitter" target="_blank" aria-label="Twitter">
+        <a href="https://twitter.com/liaprocurement" class="social-link" target="_blank" aria-label="Twitter">
           <i class="fab fa-twitter"></i>
         </a>
-        <a href="https://wa.me/12043903306" class="social-link whatsapp" target="_blank" aria-label="WhatsApp">
+        <a href="https://wa.me/12043903306" class="social-link" target="_blank" aria-label="WhatsApp">
           <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="https://www.instagram.com/liaprocurement" class="social-link instagram" target="_blank" aria-label="Instagram">
+        <a href="https://www.instagram.com/liaprocurement" class="social-link" target="_blank" aria-label="Instagram">
           <i class="fab fa-instagram"></i>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <div class="footer-container">
         <div class="footer-col">
-          <h3>About LIA</h3>
+          <h3>About LIA Procurement Inc.</h3>
           <p>LIA Procurement Inc. is an Indigenous-led firm specializing in public sector procurement strategies and contract management across Canada.</p>
           <div class="social-links" style="justify-content: flex-start; margin-top: 1.5rem;">
             <a href="#" class="social-link" style="width: 40px; height: 40px; font-size: 1rem;">
@@ -1177,7 +1125,7 @@
           <h3>Quick Links</h3>
           <ul class="footer-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#sectors">Sectors</a></li>
             <li><a href="#partnership">Partnership</a></li>
@@ -1211,7 +1159,6 @@
   </footer>
 
   <script>
-    // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const closeMenu = document.getElementById('closeMenu');
     const mainNav = document.getElementById('mainNav');
@@ -1224,7 +1171,6 @@
       mainNav.classList.remove('active');
     });
     
-    // Close mobile menu when clicking on a link
     const navLinks = document.querySelectorAll('#mainNav a');
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -1232,7 +1178,6 @@
       });
     });
     
-    // Header scroll effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
       if (window.scrollY > 100) {
@@ -1242,7 +1187,6 @@
       }
     });
     
-    // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -1260,7 +1204,6 @@
       });
     });
     
-    // Set active nav link based on scroll position
     const sections = document.querySelectorAll('section');
     window.addEventListener('scroll', () => {
       let current = '';
@@ -1282,7 +1225,6 @@
       });
     });
     
-    // Animation on scroll
     const animateElements = document.querySelectorAll('.animate');
     
     const observer = new IntersectionObserver((entries) => {
@@ -1301,6 +1243,12 @@
       element.style.transform = 'translateY(20px)';
       element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(element);
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for contacting LIA Procurement Inc. We will get back to you soon.');
+      this.reset();
     });
   </script>
 </body>
