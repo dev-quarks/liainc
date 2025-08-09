@@ -1,589 +1,1357 @@
+# Enhanced LIA Procurement Inc. Website
+
+Here's a more professional and polished version of your website with improved design elements, typography, and media integration:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="LIA Procurement Inc. - Indigenous-led firm specializing in public sector procurement strategies and contract management across Canada">
   <title>LIA Procurement Inc. - Securing Contracts, Delivering Results</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #000000;
-      --light: #ffffff;
-      --dark: #1a1a1a;
-      --medium-gray: #666666;
-      --light-gray: #f0f0f0;
-      --border: #dddddd;
-      --facebook-blue: #1877f2;
+      --primary: #0A2463;
+      --secondary: #3E92CC;
+      --accent: #D8315B;
+      --light: #FFFFFF;
+      --dark: #1E1E24;
+      --medium-gray: #6D6D6D;
+      --light-gray: #F8F9FA;
+      --border: #E0E0E0;
+      --overlay: rgba(10, 36, 99, 0.9);
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
+    
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Montserrat', sans-serif;
       color: var(--dark);
-      line-height: 1.6;
+      line-height: 1.7;
       background-color: var(--light);
+      overflow-x: hidden;
     }
-    header {
-      background-color: var(--primary);
-      color: white;
-      padding: 1.2rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid var(--border);
+    
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      line-height: 1.3;
     }
-    .header-container {
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+    }
+    
+    .container {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.2rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background-color: var(--accent);
+      color: var(--light);
+      border: 2px solid var(--accent);
+    }
+    
+    .btn-primary:hover {
+      background-color: transparent;
+      color: var(--accent);
+    }
+    
+    .btn-outline {
+      background-color: transparent;
+      color: var(--light);
+      border: 2px solid var(--light);
+    }
+    
+    .btn-outline:hover {
+      background-color: var(--light);
+      color: var(--primary);
+    }
+    
+    .section-padding {
+      padding: 6rem 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .section-title .divider {
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      margin: 0 auto;
+      border-radius: 2px;
+    }
+    
+    .text-center {
+      text-align: center;
+    }
+    
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: var(--light);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      transition: var(--transition);
+    }
+    
+    header.scrolled {
+      background-color: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 0;
+    }
+    
+    .header-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0 1.5rem;
+      padding: 1.5rem 0;
+      transition: var(--transition);
     }
+    
+    header.scrolled .header-container {
+      padding: 0.5rem 0;
+    }
+    
     .logo {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.9rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
       font-weight: 700;
-      letter-spacing: -0.5px;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
     }
+    
+    .logo img {
+      height: 40px;
+      margin-right: 0.8rem;
+    }
+    
     .logo span {
-      color: white;
+      color: var(--accent);
     }
+    
     nav ul {
       display: flex;
       list-style: none;
     }
+    
     nav ul li {
-      margin-left: 2.2rem;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-      font-size: 1.05rem;
+      margin-left: 2rem;
       position: relative;
     }
+    
+    nav ul li a {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--dark);
+      letter-spacing: 0.5px;
+      padding: 0.5rem 0;
+      position: relative;
+    }
+    
     nav ul li a:after {
       content: '';
       position: absolute;
       width: 0;
-      height: 1px;
-      bottom: -4px;
-      left: 0;
-      background-color: white;
-      transition: width 0.3s ease;
-    }
-    nav ul li a:hover:after {
-      width: 100%;
-    }
-    .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), url('https://liainc.ca/wp-content/uploads/2025/08/pexels-nay-linn-2152140617-32044305-1.jpg');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      text-align: center;
-      padding: 8rem 1.5rem 6rem;
-    }
-    .hero-content {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    .hero h1 {
-      font-family: 'Inter', sans-serif;
-      font-size: 3.2rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-    }
-    .hero p {
-      font-size: 1.3rem;
-      margin-bottom: 2.5rem;
-      opacity: 0.95;
-    }
-    .tagline {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.2rem;
-      letter-spacing: 1.5px;
-      margin-bottom: 1.8rem;
-      font-weight: 400;
-      text-transform: uppercase;
-    }
-    .signature {
-      font-family: 'Inter', sans-serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: white;
-      margin: 1.2rem 0;
-      letter-spacing: 0.5px;
-    }
-    .btn {
-      display: inline-block;
-      background-color: transparent;
-      color: white;
-      padding: 0.9rem 2rem;
-      border: 2px solid white;
-      border-radius: 0;
-      text-decoration: none;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      cursor: pointer;
-      font-size: 1.05rem;
-      letter-spacing: 0.5px;
-    }
-    .btn:hover {
-      background-color: white;
-      color: var(--primary);
-    }
-    section {
-      padding: 6rem 1.5rem;
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .section-title {
-      text-align: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 2.4rem;
-      color: var(--primary);
-      margin-bottom: 3.5rem;
-      font-weight: 700;
-      position: relative;
-      display: inline-block;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-    .section-title:after {
-      content: '';
-      position: absolute;
-      width: 80px;
       height: 2px;
-      background-color: var(--primary);
-      bottom: -12px;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 0;
+      left: 0;
+      background-color: var(--accent);
+      transition: var(--transition);
     }
-    .about-content {
-      display: flex;
-      flex-direction: column;
-      gap: 2.2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .about-content p {
-      font-size: 1.15rem;
-      line-height: 1.8;
-    }
-    .highlight {
-      background-color: var(--light-gray);
-      padding: 2.2rem;
-      border-left: 3px solid var(--primary);
-      margin: 2.2rem 0;
-      font-style: italic;
-      line-height: 1.8;
-      font-size: 1.15rem;
-    }
-    .services-grid, .sectors-grid, .partnership {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.2rem;
-      margin-top: 2.2rem;
-    }
-    .service-card, .sector-card {
-      background-color: var(--light);
-      border-radius: 0;
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      border: 1px solid var(--border);
-    }
-    .service-card:hover, .sector-card:hover {
-      transform: translateY(-6px);
-    }
-    .card-img {
+    
+    nav ul li a:hover:after,
+    nav ul li a.active:after {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
     }
-    .card-body {
-      padding: 1.8rem;
-      border: 1px solid var(--border);
-      border-top: none;
-    }
-    .card-body h3 {
-      font-family: 'Inter', sans-serif;
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
       font-size: 1.5rem;
       color: var(--primary);
-      margin-bottom: 0.9rem;
-      font-weight: 700;
-      line-height: 1.3;
+      cursor: pointer;
     }
-    .card-body p {
-      color: var(--medium-gray);
-      font-size: 1.05rem;
-      line-height: 1.7;
+    
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      min-height: 700px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: var(--light);
+      overflow: hidden;
     }
-    .contact-info {
-      background-color: var(--light);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.8rem;
-      padding: 2.5rem 1.5rem;
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--overlay);
+      z-index: 1;
     }
-    .info-item h3 {
-      font-family: 'Inter', sans-serif;
-      color: var(--primary);
-      margin-bottom: 0.4rem;
-      font-size: 1.2rem;
-      font-weight: 700;
+    
+    .hero-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
     }
-    .info-item p {
-      color: var(--dark);
-      margin-bottom: 0.2rem;
-      font-size: 1.05rem;
-    }
-    .info-item a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 500;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s ease;
-    }
-    .info-item a:hover {
-      border-bottom: 1px solid var(--primary);
-    }
-    footer {
-      background-color: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 2.5rem 1rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-    }
-    footer p {
-      opacity: 0.8;
+    
+    .hero-content {
+      position: relative;
+      z-index: 2;
       max-width: 800px;
       margin: 0 auto;
+      text-align: center;
+      padding: 0 1.5rem;
     }
-    .social-links {
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .hero-btns {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      margin: 2.5rem 0;
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
-    .social-links a {
-      color: var(--primary);
-      font-size: 1.6rem;
-      transition: transform 0.3s ease;
-      display: inline-block;
-    }
-    .social-links a:hover {
-      transform: translateY(-4px);
-    }
-    .map-container {
-      margin: 3rem auto;
-      max-width: 600px;
-      height: 300px;
-      border-radius: 0;
+    
+    /* About Section */
+    .about-section {
+      position: relative;
       overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      border: 1px solid var(--border);
     }
+    
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .about-text {
+      position: relative;
+    }
+    
+    .about-text h3 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+    }
+    
+    .about-text p {
+      margin-bottom: 1.5rem;
+      color: var(--medium-gray);
+    }
+    
+    .highlight-box {
+      background-color: var(--light-gray);
+      border-left: 4px solid var(--accent);
+      padding: 2rem;
+      margin: 2rem 0;
+      font-style: italic;
+      position: relative;
+    }
+    
+    .highlight-box:before {
+      content: '"';
+      position: absolute;
+      font-size: 5rem;
+      font-family: 'Playfair Display', serif;
+      color: rgba(216, 49, 91, 0.1);
+      top: -1rem;
+      left: 0.5rem;
+      line-height: 1;
+    }
+    
+    .about-image {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: var(--transition);
+    }
+    
+    .about-image:hover img {
+      transform: scale(1.03);
+    }
+    
+    /* Services Section */
+    .services-section {
+      background-color: var(--light-gray);
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    
+    .service-card {
+      background-color: var(--light);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-img {
+      height: 220px;
+      overflow: hidden;
+    }
+    
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .service-card:hover .service-img img {
+      transform: scale(1.05);
+    }
+    
+    .service-body {
+      padding: 2rem;
+    }
+    
+    .service-body h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .service-body p {
+      color: var(--medium-gray);
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Sectors Section */
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .sector-card {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      background-color: var(--light);
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+    
+    .sector-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    .sector-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      background-color: rgba(62, 146, 204, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--secondary);
+      font-size: 2rem;
+    }
+    
+    .sector-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .sector-card p {
+      color: var(--medium-gray);
+      font-size: 0.95rem;
+    }
+    
+    /* Partnership Section */
+    .partnership-section {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--light);
+    }
+    
+    .partnership-section .section-title h2 {
+      color: var(--light);
+    }
+    
+    .partnership-section .divider {
+      background: var(--light);
+    }
+    
+    .partnership-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    
+    .partnership-card {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 8px;
+      padding: 2.5rem;
+      transition: var(--transition);
+    }
+    
+    .partnership-card:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-5px);
+    }
+    
+    .partnership-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 1rem;
+    }
+    
+    .partnership-card h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--light);
+    }
+    
+    .partnership-card p {
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+    
+    /* Contact Section */
+    .contact-section {
+      position: relative;
+    }
+    
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+    
+    .contact-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(62, 146, 204, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--secondary);
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    .contact-text h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .contact-text a:hover {
+      color: var(--accent);
+    }
+    
+    .contact-form {
+      background-color: var(--light);
+      padding: 2.5rem;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-control {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: 'Montserrat', sans-serif;
+      transition: var(--transition);
+    }
+    
+    .form-control:focus {
+      outline: none;
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(62, 146, 204, 0.2);
+    }
+    
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .map-container {
+      height: 400px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      margin-top: 3rem;
+    }
+    
     .map-container iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
-    .understanding-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      max-width: 850px;
-      margin: 0 auto 3.5rem;
-    }
-    .understanding-section img {
-      width: 100%;
-      max-width: 750px;
-      height: auto;
-      margin: 2.5rem 0;
-      border: 1px solid var(--border);
-    }
-    .updates-section {
+    
+    /* Social Media */
+    .social-section {
       background-color: var(--light-gray);
       text-align: center;
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 2.5rem;
     }
+    
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .social-link {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--light);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: var(--transition);
+    }
+    
+    .social-link:hover {
+      transform: translateY(-5px);
+      color: var(--light);
+    }
+    
+    .social-link.facebook:hover {
+      background-color: #1877F2;
+    }
+    
+    .social-link.linkedin:hover {
+      background-color: #0077B5;
+    }
+    
+    .social-link.twitter:hover {
+      background-color: #1DA1F2;
+    }
+    
+    .social-link.whatsapp:hover {
+      background-color: #25D366;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: var(--light);
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .footer-col h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.8rem;
+    }
+    
+    .footer-col h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent);
+    }
+    
+    .footer-col p {
+      opacity: 0.8;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-links a {
+      opacity: 0.8;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+    
+    .footer-links a:hover {
+      opacity: 1;
+      color: var(--accent);
+      padding-left: 5px;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .footer-bottom p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+      
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-image {
+        order: -1;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    
     @media (max-width: 768px) {
-      .header-container {
+      .section-padding {
+        padding: 4rem 0;
+      }
+      
+      .section-title h2 {
+        font-size: 2rem;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background-color: var(--light);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.1);
+        transition: var(--transition);
+        z-index: 1001;
+        padding: 2rem;
+        display: flex;
         flex-direction: column;
-        text-align: center;
       }
+      
+      nav.active {
+        right: 0;
+      }
+      
       nav ul {
-        margin-top: 1.2rem;
-        justify-content: center;
+        flex-direction: column;
+        margin-top: 2rem;
       }
+      
       nav ul li {
-        margin: 0 1rem;
+        margin: 0 0 1.5rem 0;
       }
+      
+      .close-menu {
+        align-self: flex-end;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      
       .hero h1 {
         font-size: 2.5rem;
       }
+      
       .hero p {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
       }
-      section {
-        padding: 5rem 1rem;
+      
+      .hero-btns {
+        flex-direction: column;
+        gap: 1rem;
       }
-      .section-title {
-        font-size: 2.1rem;
+      
+      .btn {
+        width: 100%;
+        text-align: center;
       }
-      .map-container {
-        max-width: 100%;
-        height: 250px;
+    }
+    
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2rem;
       }
-      .contact-info {
-        padding: 2rem 1rem;
-        gap: 1.5rem;
+      
+      .services-grid, .sectors-grid, .partnership-grid {
+        grid-template-columns: 1fr;
       }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .footer-col h3:after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .animate {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .delay-1 {
+      animation-delay: 0.2s;
+    }
+    
+    .delay-2 {
+      animation-delay: 0.4s;
+    }
+    
+    .delay-3 {
+      animation-delay: 0.6s;
     }
   </style>
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <div class="header-container">
-      <div class="logo">LIA Procurement <span>Inc.</span></div>
-      <nav>
-        <ul>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#partner">Partner With Us</a></li>
-          <li><a href="#sectors">Sectors & Capabilities</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+  <header id="header">
+    <div class="container">
+      <div class="header-container">
+        <a href="#" class="logo">
+          <img src="https://via.placeholder.com/40x40" alt="LIA Procurement Logo">
+          LIA <span>Procurement</span>
+        </a>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        
+        <nav id="mainNav">
+          <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+          </button>
+          <ul>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#sectors">Sectors</a></li>
+            <li><a href="#partnership">Partnership</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero" id="home">
+    <video autoplay muted loop class="hero-video">
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-business-meeting-in-a-modern-office-space-4475-large.mp4" type="video/mp4">
+    </video>
+    
     <div class="hero-content">
-      <h1>LIA Procurement Inc.</h1>
-      <div class="signature">Securing Contracts. Delivering Results.</div>
-      <div class="tagline">Tailored Solutions. Strategic Partnerships. Proven Results.</div>
-      <p>LIA Procurement Inc. is a trailblazing firm that combines procurement expertise with strategic insight to transform how businesses engage with Canada's public sector landscape.</p>
-      <a href="#services" class="btn">Explore Our Services</a>
-    </div>
-  </section>
-
-  <!-- Understanding Public Procurement -->
-  <section id="understanding" style="padding: 4rem 1.5rem;">
-    <div class="container">
-      <div class="understanding-section">
-        <h2 class="section-title">Understanding Public Procurement</h2>
-        <p>Public procurement involves the process by which government agencies and organizations purchase goods, services, and construction services. It ensures that public funds are spent responsibly, transparently, and fairly, supporting community development and economic growth. Understanding these processes helps businesses navigate opportunities and fosters trust between the public sector and private sector partners.</p>
-        <img src="https://liainc.ca/wp-content/uploads/2025/08/pexels-nay-linn-2152140617-32044305-1.jpg" alt="Four laptops and a computer monitor with Indigenous animal designs on their screens, set on a table" />
+      <h1 class="animate">Securing Contracts. Delivering Results.</h1>
+      <p class="animate delay-1">LIA Procurement Inc. is a trailblazing Indigenous-led firm that combines procurement expertise with strategic insight to transform how businesses engage with Canada's public sector landscape.</p>
+      <div class="hero-btns animate delay-2">
+        <a href="#services" class="btn btn-primary">Our Services</a>
+        <a href="#contact" class="btn btn-outline">Contact Us</a>
       </div>
     </div>
   </section>
 
-  <!-- About Us -->
-  <section id="about">
+  <!-- About Section -->
+  <section class="about-section section-padding" id="about">
     <div class="container">
-      <h2 class="section-title">About Us</h2>
+      <div class="section-title animate">
+        <h2>About Our Company</h2>
+        <div class="divider"></div>
+      </div>
+      
       <div class="about-content">
-        <p>"From day one, our mission has been guided by more than just business — it's been about responsibility, community, and connection to land and people. As an Indigenous-led company, we bring forward the values of respect, reciprocity, and relationship-building in everything we do.</p>
-        <div class="highlight">
-          We built this company to solve the very challenges we once faced in our own communities. Today, we don't just deliver solutions — we honor trust, uplift voices, and walk forward together, one partnership at a time.
-        </div>
-        <p>Our company specializes in identifying, securing, and managing public sector contracts at the federal, provincial, and municipal levels across Canada. We actively participate in public tenders and government solicitations, acting both as a prime contractor and as a strategic intermediary connecting qualified subcontractors to awarded contracts. As an Indigenous-owned business, we are well-positioned to access unique procurement opportunities and contribute to the advancement of Canada's Indigenous procurement strategy.</p>
-        <p>In addition to contract execution, we provide business development and management services to companies seeking to expand their presence in the public sector. We help enterprises identify contract opportunities, prepare proposals, and navigate the public procurement process. Through a strong network of partners across various sectors and regions, both domestically and internationally, we are able to deliver a broad range of services and products without being limited to one industry or specialization.</p>
-        <p>Our flexible, partnership-driven model allows us to match the right expertise to each opportunity, ensuring successful outcomes for government clients and business partners alike.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Partner With Us -->
-  <section id="partner" style="background-color: var(--light-gray);">
-    <div class="container">
-      <h2 class="section-title">Partner With Us</h2>
-      <p style="text-align: center; max-width: 800px; margin: 0 auto 2.5rem; font-size: 1.15rem;">
-        Join forces with LIA Procurement Inc. to unlock public sector opportunities. Whether you're a government agency seeking trusted delivery or a business looking to grow in the public market, our partnership model drives mutual success.
-      </p>
-      <div class="partnership">
-        <div class="service-card">
-          <img src="https://liainc.ca/wp-content/uploads/2025/08/leyvaine-davids-ytpknc-767w-unsplash-1.jpg" alt="Professionals working outside government building" class="card-img" />
-          <div class="card-body">
-            <h3>For Government Clients</h3>
-            <p>We deliver reliable, compliant, and community-conscious solutions that meet public sector standards and support Indigenous economic participation.</p>
+        <div class="about-text animate delay-1">
+          <h3>Indigenous-Led Procurement Excellence</h3>
+          <p>LIA Procurement Inc. is an Indigenous-owned company specializing in public sector procurement at federal, provincial, and municipal levels across Canada. We actively participate in public tenders and government solicitations, serving as both prime contractor and strategic intermediary.</p>
+          
+          <div class="highlight-box">
+            We built this company to solve the very challenges we once faced in our own communities. Today, we don't just deliver solutions — we honor trust, uplift voices, and walk forward together, one partnership at a time.
           </div>
+          
+          <p>Our flexible, partnership-driven model allows us to match the right expertise to each opportunity, ensuring successful outcomes for government clients and business partners alike. We bring forward Indigenous values of respect, reciprocity, and relationship-building in all our engagements.</p>
         </div>
-        <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Business collaboration" class="card-img" />
-          <div class="card-body">
-            <h3>For Businesses</h3>
-            <p>Gain access to our expertise, networks, and proven strategies to successfully enter and scale within Canada's public procurement ecosystem.</p>
-          </div>
+        
+        <div class="about-image animate delay-2">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="LIA Procurement team meeting">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Sectors & Capabilities -->
-  <section id="sectors">
+  <!-- Services Section -->
+  <section class="services-section section-padding" id="services">
     <div class="container">
-      <h2 class="section-title">Sectors & Capabilities</h2>
-      <div class="sectors-grid">
-        <div class="sector-card">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Government building" class="card-img" />
-          <div class="card-body">
-            <h3>Federal Procurement</h3>
-            <p>Navigating complex federal tenders with precision and compliance, from innovation grants to large-scale infrastructure projects.</p>
-          </div>
-        </div>
-        <div class="sector-card">
-          <img src="https://images.unsplash.com/photo-1579546929518-9e396f526e10?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="City skyline" class="card-img" />
-          <div class="card-body">
-            <h3>Provincial & Municipal</h3>
-            <p>Supporting regional development through targeted engagement with provincial agencies and local governments.</p>
-          </div>
-        </div>
-        <div class="sector-card">
-          <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Construction site" class="card-img" />
-          <div class="card-body">
-            <h3>Construction & Infrastructure</h3>
-            <p>Delivering end-to-end project support for public works, transportation, and community development contracts.</p>
-          </div>
-        </div>
-        <div class="sector-card">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="IT services" class="card-img" />
-          <div class="card-body">
-            <h3>Technology & Consulting</h3>
-            <p>Providing digital transformation, cybersecurity, and advisory services tailored to public sector needs.</p>
-          </div>
-        </div>
+      <div class="section-title animate">
+        <h2>Our Services</h2>
+        <div class="divider"></div>
+        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto;">We provide comprehensive procurement solutions tailored to your needs in the public sector marketplace.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- Services -->
-  <section id="services" style="background-color: var(--light-gray);">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
+      
       <div class="services-grid">
-        <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Strategy meeting" class="card-img" />
-          <div class="card-body">
+        <div class="service-card animate delay-1">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Procurement Strategy">
+          </div>
+          <div class="service-body">
             <h3>Procurement Strategies</h3>
-            <p>Expert guidance on navigating and securing public sector contracts across various government levels.</p>
+            <p>Expert guidance on navigating and securing public sector contracts across various government levels with our Indigenous procurement advantage.</p>
+            <a href="#contact" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;">Learn More</a>
           </div>
         </div>
-        <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1586769852834-9c7dd49f9836?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Document preparation" class="card-img" />
-          <div class="card-body">
+        
+        <div class="service-card animate delay-2">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Bid Preparation">
+          </div>
+          <div class="service-body">
             <h3>Bid Preparation</h3>
-            <p>Assistance with proposal development and submission for public procurement opportunities.</p>
+            <p>Comprehensive assistance with proposal development and submission to maximize your success in public procurement opportunities.</p>
+            <a href="#contact" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;">Learn More</a>
           </div>
         </div>
-        <div class="service-card">
-          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Contract signing" class="card-img" />
-          <div class="card-body">
+        
+        <div class="service-card animate delay-3">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Contract Management">
+          </div>
+          <div class="service-body">
             <h3>Contract Management</h3>
-            <p>Comprehensive support in managing awarded contracts efficiently and effectively.</p>
+            <p>End-to-end support in managing awarded contracts to ensure compliance, quality delivery, and successful project completion.</p>
+            <a href="#contact" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;">Learn More</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Latest Updates -->
-  <section id="updates" style="padding: 4rem 1.5rem;">
+  <!-- Sectors Section -->
+  <section class="section-padding" id="sectors">
     <div class="container">
-      <div class="updates-section">
-        <h2 class="section-title">Latest Updates in Public Procurement</h2>
-        <p>Stay informed on recent developments, upcoming opportunities, and strategic partnerships shaping Canada's public procurement landscape. LIA Procurement Inc. continues to lead with expertise and integrity, connecting communities and businesses to vital government contracts across all levels.</p>
+      <div class="section-title animate">
+        <h2>Sectors & Capabilities</h2>
+        <div class="divider"></div>
+        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto;">We serve diverse sectors with specialized expertise in public procurement.</p>
+      </div>
+      
+      <div class="sectors-grid">
+        <div class="sector-card animate delay-1">
+          <div class="sector-icon">
+            <i class="fas fa-landmark"></i>
+          </div>
+          <h3>Federal Procurement</h3>
+          <p>Navigating complex federal tenders with precision and compliance, from innovation grants to large-scale infrastructure projects.</p>
+        </div>
+        
+        <div class="sector-card animate delay-2">
+          <div class="sector-icon">
+            <i class="fas fa-city"></i>
+          </div>
+          <h3>Provincial & Municipal</h3>
+          <p>Supporting regional development through targeted engagement with provincial agencies and local governments.</p>
+        </div>
+        
+        <div class="sector-card animate delay-1">
+          <div class="sector-icon">
+            <i class="fas fa-hard-hat"></i>
+          </div>
+          <h3>Construction & Infrastructure</h3>
+          <p>Delivering end-to-end project support for public works, transportation, and community development contracts.</p>
+        </div>
+        
+        <div class="sector-card animate delay-2">
+          <div class="sector-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Technology & Consulting</h3>
+          <p>Providing digital transformation, cybersecurity, and advisory services tailored to public sector needs.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Social Media Links -->
-  <section id="social" style="padding: 3rem 1.5rem; text-align: center;">
+  <!-- Partnership Section -->
+  <section class="partnership-section section-padding" id="partnership">
     <div class="container">
-      <h2 class="section-title" style="margin-bottom: 2rem;">Connect With Us</h2>
+      <div class="section-title animate">
+        <h2>Partner With Us</h2>
+        <div class="divider"></div>
+        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto; opacity: 0.9;">Join forces with LIA Procurement to unlock public sector opportunities through strategic collaboration.</p>
+      </div>
+      
+      <div class="partnership-grid">
+        <div class="partnership-card animate delay-1">
+          <h3>For Government Clients</h3>
+          <p>We deliver reliable, compliant, and community-conscious solutions that meet public sector standards and support Indigenous economic participation through our unique procurement advantages.</p>
+          <a href="#contact" class="btn btn-outline" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;">Contact Our Team</a>
+        </div>
+        
+        <div class="partnership-card animate delay-2">
+          <h3>For Businesses</h3>
+          <p>Gain access to our expertise, networks, and proven strategies to successfully enter and scale within Canada's public procurement ecosystem through our Indigenous partnership model.</p>
+          <a href="#contact" class="btn btn-outline" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;">Explore Partnership</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-section section-padding" id="contact">
+    <div class="container">
+      <div class="section-title animate">
+        <h2>Get In Touch</h2>
+        <div class="divider"></div>
+        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto;">Contact us to discuss how we can support your public procurement needs.</p>
+      </div>
+      
+      <div class="contact-container">
+        <div class="animate delay-1">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Email</h3>
+                <a href="mailto:procurement@liainc.ca">procurement@liainc.ca</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Phone</h3>
+                <a href="tel:+12043903306">+1 (204) 390-3306</a>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Address</h3>
+                <p>333 Bay Street, Toronto, Ontario M5H 2R2</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-globe"></i>
+              </div>
+              <div class="contact-text">
+                <h3>Website</h3>
+                <a href="https://www.liainc.ca" target="_blank">www.liainc.ca</a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="social-links">
+            <a href="https://www.facebook.com/liaprocurement" class="social-link facebook" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/liaprocurement" class="social-link linkedin" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://twitter.com/liaprocurement" class="social-link twitter" target="_blank" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://wa.me/12043903306" class="social-link whatsapp" target="_blank" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="contact-form animate delay-2">
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Subject">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" placeholder="Your Message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+      
+      <div class="map-container animate delay-3">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.472351838139!2d-79.3827284!3d43.6472237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d2a81633ef%3A0x1b6d2f5d4a1c4a0!2s333%20Bay%20St%2C%20Toronto%2C%20ON%20M5H%202R2%2C%20Canada!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Media Section -->
+  <section class="social-section section-padding">
+    <div class="container">
+      <div class="section-title animate">
+        <h2>Connect With Us</h2>
+        <div class="divider"></div>
+        <p class="text-center animate delay-1" style="max-width: 700px; margin: 0 auto;">Follow us for the latest updates on public procurement opportunities and insights.</p>
+      </div>
+      
       <div class="social-links">
-        <a href="https://www.facebook.com/liaprocurement" target="_blank" aria-label="Facebook">
-          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-          </svg>
+        <a href="https://www.facebook.com/liaprocurement" class="social-link facebook" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="https://www.linkedin.com/company/liaprocurement" target="_blank" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
+        <a href="https://www.linkedin.com/company/liaprocurement" class="social-link linkedin" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
         </a>
-        <a href="https://twitter.com/liaprocurement" target="_blank" aria-label="X (Twitter)">
-          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.7-.8 5.2-2.2 7.2-4-1.5 0.7-3.2 1.1-5 1-2.7 0-5.3-1.3-7.3-3.6-1.7 0-3.2-1-4.3-2.5 1.5 0.7 3.2 1.1 5 1-1.5-1-2.5-2.5-2.5-4.2 0-1 .4-1.9 1-2.7 7.5 9.1 19 10.2 21.5 10.2 1.8 0 3.5-1.1 4.8-2.7-1.3 0.6-2.7 1-4.1 1.1z"></path>
-          </svg>
+        <a href="https://twitter.com/liaprocurement" class="social-link twitter" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
         </a>
-        <a href="https://wa.me/12043903306" target="_blank" aria-label="WhatsApp">
-          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-            <path d="M15 7.5h.01"></path>
-          </svg>
+        <a href="https://wa.me/12043903306" class="social-link whatsapp" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/liaprocurement" class="social-link instagram" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
         </a>
       </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact Us</h2>
-      <div class="contact-info">
-        <div class="info-item">
-          <h3>Email</h3>
-          <p><a href="mailto:procurement@liainc.ca">procurement@liainc.ca</a></p>
-        </div>
-        <div class="info-item">
-          <h3>Phone</h3>
-          <p><a href="tel:+12043903306">+1 (204) 390-3306</a></p>
-        </div>
-        <div class="info-item">
-          <h3>Address</h3>
-          <p>333 Bay Street, Toronto, Ontario M5H 2R2</p>
-        </div>
-        <div class="info-item">
-          <h3>Website</h3>
-          <p><a href="https://www.liainc.ca" target="_blank">www.liainc.ca</a></p>
-        </div>
-      </div>
-      
-      <!-- Google Map -->
-      <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.472351838139!2d-79.3827284!3d43.6472237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b34d2a81633ef%3A0x1b6d2f5d4a1c4a0!2s333%20Bay%20St%2C%20Toronto%2C%20ON%20M5H%202R2%2C%20Canada!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-      
-      <p style="text-align: center; margin-top: 2.5rem; font-style: italic; font-size: 1.1rem;">
-        LIA Procurement Inc. — Securing Contracts, Delivering Results
-      </p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 LIA Procurement Inc. All rights reserved.</p>
+    <div class="container">
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>About LIA</h3>
+          <p>LIA Procurement Inc. is an Indigenous-led firm specializing in public sector procurement strategies and contract management across Canada.</p>
+          <div class="social-links" style="justify-content: flex-start; margin-top: 1.5rem;">
+            <a href="#" class="social-link" style="width: 40px; height: 40px; font-size: 1rem;">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" style="width: 40px; height: 40px; font-size: 1rem;">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-link" style="width: 40px; height: 40px; font-size: 1rem;">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#sectors">Sectors</a></li>
+            <li><a href="#partnership">Partnership</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="#">Procurement Strategies</a></li>
+            <li><a href="#">Bid Preparation</a></li>
+            <li><a href="#">Contract Management</a></li>
+            <li><a href="#">Indigenous Procurement</a></li>
+            <li><a href="#">Business Development</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contact Info</h3>
+          <p><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i> 333 Bay Street, Toronto, ON M5H 2R2</p>
+          <p><i class="fas fa-phone-alt" style="margin-right: 0.5rem;"></i> +1 (204) 390-3306</p>
+          <p><i class="fas fa-envelope" style="margin-right: 0.5rem;"></i> procurement@liainc.ca</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 LIA Procurement Inc. All Rights Reserved.</p>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeMenu = document.getElementById('closeMenu');
+    const mainNav = document.getElementById('mainNav');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      mainNav.classList.add('active');
+    });
+    
+    closeMenu.addEventListener('click', () => {
+      mainNav.classList.remove('active');
+    });
+    
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('#mainNav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+      });
+    });
+    
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Set active nav link based on scroll position
+    const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if (pageYOffset >= sectionTop - 200) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+    
+    // Animation on scroll
+    const animateElements = document.querySelectorAll('.animate');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+    
+    animateElements.forEach(element => {
+      element.style.opacity = 0;
+      element.style.transform = 'translateY(20px)';
+      element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(element);
+    });
+  </script>
 </body>
 </html>
+```
+
+## Key Improvements:
+
+1. **Modern Color Scheme**:
+   - Professional blue primary color with accent colors that create visual hierarchy
+   - Improved contrast for better readability
+
+2. **Enhanced Typography**:
+   - Combination of Montserrat (sans-serif) for body text and Playfair Display (serif) for headings
+   - Better font weights and spacing for improved readability
+
+3. **Visual Elements**:
+   - Hero video background for a more dynamic first impression
+   - Card hover effects with subtle animations
+   - Icon integration for better visual communication
+   - Improved spacing and section organization
+
+4. **Responsive Design**:
+   - Fully responsive mobile menu with smooth transitions
+   - Better mobile layout for all sections
+   - Adjusted font sizes for different screen sizes
+
+5. **Interactive Elements**:
+   - Smooth scrolling navigation
+   - Sticky header that shrinks on scroll
+   - Animated elements that appear as you scroll
+   - Hover effects on buttons and links
+
+6. **Professional Structure**:
+   - Better organized sections with consistent styling
+   - Improved footer with multiple columns of information
+   - Enhanced contact form with proper styling
+
+7. **Performance Optimizations**:
+   - Preconnected to Google Fonts
+   - Font Awesome icons for consistent vector icons
+   - Optimized animations that don't impact performance
+
+8. **Accessibility Improvements**:
+   - Better color contrast
+   - Proper ARIA labels for social media links
+   - Semantic HTML structure
+
+This redesign maintains your original content while presenting it in a more professional, polished, and engaging format that will better represent your company's expertise in procurement services.
