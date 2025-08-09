@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -229,42 +228,33 @@
       line-height: 1.7;
     }
     .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      max-width: 500px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: var(--light-gray);
-      border-radius: 8px;
-      border: 1px solid var(--border);
+      background-color: var(--light);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.8rem;
+      padding: 2.5rem 1.5rem;
     }
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.8rem;
-    }
-    .contact-item i {
+    .info-item h3 {
+      font-family: 'Inter', sans-serif;
       color: var(--primary);
-      min-width: 20px;
-      font-size: 1.1rem;
-      margin-top: 3px;
+      margin-bottom: 0.4rem;
+      font-size: 1.2rem;
+      font-weight: 700;
     }
-    .contact-item div {
+    .info-item p {
+      color: var(--dark);
+      margin-bottom: 0.2rem;
       font-size: 1.05rem;
     }
-    .contact-item a {
+    .info-item a {
       color: var(--primary);
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s ease;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease;
     }
-    .contact-item a:hover {
-      color: var(--facebook-blue);
-    }
-    .contact-item p, .contact-item a {
-      margin: 0;
-      line-height: 1.5;
+    .info-item a:hover {
+      border-bottom: 1px solid var(--primary);
     }
     footer {
       background-color: var(--primary);
@@ -359,8 +349,8 @@
         height: 250px;
       }
       .contact-info {
-        margin: 2rem 1rem;
-        padding: 1.5rem;
+        padding: 2rem 1rem;
+        gap: 1.5rem;
       }
     }
   </style>
@@ -560,29 +550,21 @@
     <div class="container">
       <h2 class="section-title">Contact Us</h2>
       <div class="contact-info">
-        <div class="contact-item">
-          <i>📧</i>
-          <div>
-            <a href="mailto:procurement@liainc.ca">procurement@liainc.ca</a>
-          </div>
+        <div class="info-item">
+          <h3>Email</h3>
+          <p><a href="mailto:procurement@liainc.ca">procurement@liainc.ca</a></p>
         </div>
-        <div class="contact-item">
-          <i>📞</i>
-          <div>
-            <a href="tel:+12043903306">+1 (204) 390-3306</a>
-          </div>
+        <div class="info-item">
+          <h3>Phone</h3>
+          <p><a href="tel:+12043903306">+1 (204) 390-3306</a></p>
         </div>
-        <div class="contact-item">
-          <i>📍</i>
-          <div>
-            <p>333 Bay Street, Toronto, Ontario M5H 2R2</p>
-          </div>
+        <div class="info-item">
+          <h3>Address</h3>
+          <p>333 Bay Street, Toronto, Ontario M5H 2R2</p>
         </div>
-        <div class="contact-item">
-          <i>🌐</i>
-          <div>
-            <a href="https://www.liainc.ca" target="_blank">www.liainc.ca</a>
-          </div>
+        <div class="info-item">
+          <h3>Website</h3>
+          <p><a href="https://www.liainc.ca" target="_blank">www.liainc.ca</a></p>
         </div>
       </div>
       
@@ -605,4 +587,3 @@
   </footer>
 </body>
 </html>
-```
