@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LIA Procurement Inc. - Securing Contracts, Delivering Results</title>
-  <link href="https://fonts.googleapis.com/css2?family=Georgia:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --primary: #000000;
@@ -13,6 +14,7 @@
       --medium-gray: #666666;
       --light-gray: #f0f0f0;
       --border: #dddddd;
+      --facebook-blue: #1877f2;
     }
     * {
       margin: 0;
@@ -20,9 +22,9 @@
       box-sizing: border-box;
     }
     body {
-      font-family: 'Georgia', serif;
+      font-family: 'Inter', sans-serif;
       color: var(--dark);
-      line-height: 1.7;
+      line-height: 1.6;
       background-color: var(--light);
     }
     header {
@@ -43,7 +45,7 @@
       padding: 0 1.5rem;
     }
     .logo {
-      font-family: 'Georgia', serif;
+      font-family: 'Inter', sans-serif;
       font-size: 1.9rem;
       font-weight: 700;
       letter-spacing: -0.5px;
@@ -80,7 +82,7 @@
       width: 100%;
     }
     .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), url('...');
+      background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), url('https://liainc.ca/wp-content/uploads/2025/08/pexels-nay-linn-2152140617-32044305-1.jpg');
       background-size: cover;
       background-position: center;
       color: white;
@@ -92,7 +94,7 @@
       margin: 0 auto;
     }
     .hero h1 {
-      font-family: 'Georgia', serif;
+      font-family: 'Inter', sans-serif;
       font-size: 3.2rem;
       margin-bottom: 1rem;
       font-weight: 700;
@@ -104,7 +106,7 @@
       opacity: 0.95;
     }
     .tagline {
-      font-family: 'Georgia', serif;
+      font-family: 'Inter', sans-serif;
       font-size: 1.2rem;
       letter-spacing: 1.5px;
       margin-bottom: 1.8rem;
@@ -112,7 +114,7 @@
       text-transform: uppercase;
     }
     .signature {
-      font-family: 'Georgia', serif;
+      font-family: 'Inter', sans-serif;
       font-size: 1.6rem;
       font-weight: 700;
       color: white;
@@ -127,7 +129,7 @@
       border: 2px solid white;
       border-radius: 0;
       text-decoration: none;
-      font-family: 'Georgia', serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 500;
       transition: all 0.3s ease;
       cursor: pointer;
@@ -147,7 +149,7 @@
     }
     .section-title {
       text-align: center;
-      font-family: 'Georgia', serif;
+      font-family: 'Inter', sans-serif;
       font-size: 2.4rem;
       color: var(--primary);
       margin-bottom: 3.5rem;
@@ -214,7 +216,7 @@
       border-top: none;
     }
     .card-body h3 {
-      font-family: 'Georgia', serif;
+      font-family: 'Inter', sans-serif;
       font-size: 1.5rem;
       color: var(--primary);
       margin-bottom: 0.9rem;
@@ -227,39 +229,49 @@
       line-height: 1.7;
     }
     .contact-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2.2rem;
-      margin-top: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      max-width: 500px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: var(--light-gray);
+      border-radius: 8px;
+      border: 1px solid var(--border);
     }
-    .info-item h3 {
-      font-family: 'Georgia', serif;
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.8rem;
+    }
+    .contact-item i {
       color: var(--primary);
-      margin-bottom: 0.6rem;
-      font-size: 1.25rem;
-      font-weight: 700;
+      min-width: 20px;
+      font-size: 1.1rem;
+      margin-top: 3px;
     }
-    .info-item p {
-      color: var(--dark);
-      margin-bottom: 0.4rem;
+    .contact-item div {
       font-size: 1.05rem;
     }
-    .info-item a {
+    .contact-item a {
       color: var(--primary);
       text-decoration: none;
       font-weight: 500;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s ease;
+      transition: color 0.3s ease;
     }
-    .info-item a:hover {
-      border-bottom: 1px solid var(--primary);
+    .contact-item a:hover {
+      color: var(--facebook-blue);
+    }
+    .contact-item p, .contact-item a {
+      margin: 0;
+      line-height: 1.5;
     }
     footer {
       background-color: var(--primary);
       color: white;
       text-align: center;
       padding: 2.5rem 1rem;
-      font-family: 'Georgia', serif;
+      font-family: 'Inter', sans-serif;
       font-size: 0.95rem;
     }
     footer p {
@@ -346,6 +358,10 @@
         max-width: 100%;
         height: 250px;
       }
+      .contact-info {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -383,7 +399,7 @@
       <div class="understanding-section">
         <h2 class="section-title">Understanding Public Procurement</h2>
         <p>Public procurement involves the process by which government agencies and organizations purchase goods, services, and construction services. It ensures that public funds are spent responsibly, transparently, and fairly, supporting community development and economic growth. Understanding these processes helps businesses navigate opportunities and fosters trust between the public sector and private sector partners.</p>
-        <img src="https://liainc2025-my.sharepoint.com/:i:/g/personal/procurement_liainc_ca1/EQnCdPOWSq5AkvI29YGaG6UBbysami7FFydeIolR4fW11g?e=XkR5me" />
+        <img src="https://liainc.ca/wp-content/uploads/2025/08/pexels-nay-linn-2152140617-32044305-1.jpg" alt="Four laptops and a computer monitor with Indigenous animal designs on their screens, set on a table" />
       </div>
     </div>
   </section>
@@ -413,14 +429,14 @@
       </p>
       <div class="partnership">
         <div class="service-card">
-          <img src="https://liainc2025-my.sharepoint.com/:i:/g/personal/procurement_liainc_ca1/EQnCdPOWSq5AkvI29YGaG6UBbysami7FFydeIolR4fW11g?e=XkR5me" />
+          <img src="https://liainc.ca/wp-content/uploads/2025/08/leyvaine-davids-ytpknc-767w-unsplash-1.jpg" alt="Professionals working outside government building" class="card-img" />
           <div class="card-body">
             <h3>For Government Clients</h3>
             <p>We deliver reliable, compliant, and community-conscious solutions that meet public sector standards and support Indigenous economic participation.</p>
           </div>
         </div>
         <div class="service-card">
-          <img src="https://liainc2025-my.sharepoint.com/:i:/g/personal/procurement_liainc_ca1/EQnCdPOWSq5AkvI29YGaG6UBbysami7FFydeIolR4fW11g?e=XkR5me" />
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Business collaboration" class="card-img" />
           <div class="card-body">
             <h3>For Businesses</h3>
             <p>Gain access to our expertise, networks, and proven strategies to successfully enter and scale within Canada's public procurement ecosystem.</p>
@@ -436,28 +452,28 @@
       <h2 class="section-title">Sectors & Capabilities</h2>
       <div class="sectors-grid">
         <div class="sector-card">
-          <img src="https://liainc2025-my.sharepoint.com/:i:/g/personal/procurement_liainc_ca1/EQnCdPOWSq5AkvI29YGaG6UBbysami7FFydeIolR4fW11g?e=XkR5me" />
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Government building" class="card-img" />
           <div class="card-body">
             <h3>Federal Procurement</h3>
             <p>Navigating complex federal tenders with precision and compliance, from innovation grants to large-scale infrastructure projects.</p>
           </div>
         </div>
         <div class="sector-card">
-          <img src="https://liainc2025-my.sharepoint.com/:i:/g/personal/procurement_liainc_ca1/EQnCdPOWSq5AkvI29YGaG6UBbysami7FFydeIolR4fW11g?e=XkR5me" />
+          <img src="https://images.unsplash.com/photo-1579546929518-9e396f526e10?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="City skyline" class="card-img" />
           <div class="card-body">
             <h3>Provincial & Municipal</h3>
             <p>Supporting regional development through targeted engagement with provincial agencies and local governments.</p>
           </div>
         </div>
         <div class="sector-card">
-          <img src="https://liainc2025-my.sharepoint.com/:i:/g/personal/procurement_liainc_ca1/EQnCdPOWSq5AkvI29YGaG6UBbysami7FFydeIolR4fW11g?e=XkR5me" />
+          <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Construction site" class="card-img" />
           <div class="card-body">
             <h3>Construction & Infrastructure</h3>
             <p>Delivering end-to-end project support for public works, transportation, and community development contracts.</p>
           </div>
         </div>
         <div class="sector-card">
-          <img src="https://liainc2025-my.sharepoint.com/:i:/g/personal/procurement_liainc_ca1/EQnCdPOWSq5AkvI29YGaG6UBbysami7FFydeIolR4fW11g?e=XkR5me" />
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="IT services" class="card-img" />
           <div class="card-body">
             <h3>Technology & Consulting</h3>
             <p>Providing digital transformation, cybersecurity, and advisory services tailored to public sector needs.</p>
@@ -473,21 +489,21 @@
       <h2 class="section-title">Our Services</h2>
       <div class="services-grid">
         <div class="service-card">
-          <img src="https://liainc2025-my.sharepoint.com/:i:/g/personal/procurement_liainc_ca1/EQnCdPOWSq5AkvI29YGaG6UBbysami7FFydeIolR4fW11g?e=XkR5me" />
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Strategy meeting" class="card-img" />
           <div class="card-body">
             <h3>Procurement Strategies</h3>
             <p>Expert guidance on navigating and securing public sector contracts across various government levels.</p>
           </div>
         </div>
         <div class="service-card">
-          <img src="https://liainc2025-my.sharepoint.com/:i:/g/personal/procurement_liainc_ca1/EQnCdPOWSq5AkvI29YGaG6UBbysami7FFydeIolR4fW11g?e=XkR5me" />
+          <img src="https://images.unsplash.com/photo-1586769852834-9c7dd49f9836?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Document preparation" class="card-img" />
           <div class="card-body">
             <h3>Bid Preparation</h3>
             <p>Assistance with proposal development and submission for public procurement opportunities.</p>
           </div>
         </div>
         <div class="service-card">
-          <img src="https://liainc2025-my.sharepoint.com/:i:/g/personal/procurement_liainc_ca1/EQnCdPOWSq5AkvI29YGaG6UBbysami7FFydeIolR4fW11g?e=XkR5me" />
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Contract signing" class="card-img" />
           <div class="card-body">
             <h3>Contract Management</h3>
             <p>Comprehensive support in managing awarded contracts efficiently and effectively.</p>
@@ -544,21 +560,29 @@
     <div class="container">
       <h2 class="section-title">Contact Us</h2>
       <div class="contact-info">
-        <div class="info-item">
-          <h3>Email</h3>
-          <p><a href="mailto:procurement@liainc.ca">procurement@liainc.ca</a></p>
+        <div class="contact-item">
+          <i>📧</i>
+          <div>
+            <a href="mailto:procurement@liainc.ca">procurement@liainc.ca</a>
+          </div>
         </div>
-        <div class="info-item">
-          <h3>Phone</h3>
-          <p><a href="tel:+12043903306">+1 (204) 390-3306</a></p>
+        <div class="contact-item">
+          <i>📞</i>
+          <div>
+            <a href="tel:+12043903306">+1 (204) 390-3306</a>
+          </div>
         </div>
-        <div class="info-item">
-          <h3>Address</h3>
-          <p>333 Bay Street, Toronto, Ontario M5H 2R2</p>
+        <div class="contact-item">
+          <i>📍</i>
+          <div>
+            <p>333 Bay Street, Toronto, Ontario M5H 2R2</p>
+          </div>
         </div>
-        <div class="info-item">
-          <h3>Website</h3>
-          <p><a href="https://www.liainc.ca" target="_blank">www.liainc.ca</a></p>
+        <div class="contact-item">
+          <i>🌐</i>
+          <div>
+            <a href="https://www.liainc.ca" target="_blank">www.liainc.ca</a>
+          </div>
         </div>
       </div>
       
@@ -581,3 +605,4 @@
   </footer>
 </body>
 </html>
+```
