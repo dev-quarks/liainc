@@ -1,12 +1,20 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="LIA Inc. - Securing Contracts. Delivering Results.">
-  <title>LIA Inc. | Securing Contracts. Delivering Results.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LIA Inc. - Securing Contracts, Delivering Results</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
+    :root {
+      --primary: #003366;
+      --secondary: #D95F0E;
+      --light: #f8f9fa;
+      --dark: #1a1a1a;
+      --gray: #6c757d;
+      --accent: #e6f4f1;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -14,125 +22,398 @@
     }
     body {
       font-family: 'Inter', sans-serif;
-      color: #222;
+      color: var(--dark);
       line-height: 1.6;
-      background-color: #fff;
+      background-color: #ffffff;
     }
     header {
-      background-color: #003B5C;
-      color: #fff;
-      padding: 2rem 1rem;
-      text-align: center;
+      background-color: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    header h1 {
-      font-size: 2rem;
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .logo span {
+      color: var(--secondary);
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav ul li {
+      margin-left: 2rem;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+      font-size: 1rem;
+    }
+    nav ul li a:hover {
+      color: #ddd;
+    }
+    .hero {
+      background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.9)), url('https://liainc.ca/wp-content/uploads/2025/08/pexels-nay-linn-2152140617-32044305-1.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 6rem 1.5rem;
+    }
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
       font-weight: 700;
     }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
     }
-    nav {
-      background-color: #f4f4f4;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
+    .tagline {
+      font-size: 1.1rem;
+      letter-spacing: 1px;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
     }
-    nav a {
-      text-decoration: none;
-      color: #003B5C;
+    .signature {
+      font-size: 1.5rem;
       font-weight: 600;
+      color: var(--secondary);
+      margin: 1rem 0;
+    }
+    .btn {
+      display: inline-block;
+      background-color: var(--secondary);
+      color: white;
+      padding: 0.8rem 1.8rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn:hover {
+      background-color: #c25213;
     }
     section {
-      padding: 3rem 1rem;
-      max-width: 900px;
-      margin: auto;
+      padding: 5rem 1.5rem;
     }
-    section h2 {
-      color: #003B5C;
-      margin-bottom: 1rem;
-      font-size: 1.75rem;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
     }
-    footer {
-      background-color: #003B5C;
-      color: #fff;
+    .section-title {
       text-align: center;
-      padding: 2rem 1rem;
+      font-size: 2.2rem;
+      color: var(--primary);
+      margin-bottom: 3rem;
+      font-weight: 600;
     }
-    .contact-info p {
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .about-content p {
+      font-size: 1.1rem;
+      color: var(--dark);
+    }
+    .highlight {
+      background-color: var(--accent);
+      padding: 2rem;
+      border-left: 5px solid var(--secondary);
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--dark);
+    }
+    .services-grid, .sectors-grid, .partnership {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .service-card, .sector-card {
+      background-color: #fafafa;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover, .sector-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 1.5rem;
+    }
+    .card-body h3 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 0.8rem;
+    }
+    .card-body p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+    .contact-info {
+      background-color: var(--light);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 3rem 1.5rem;
+    }
+    .info-item h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .info-item p {
+      color: var(--dark);
       margin-bottom: 0.3rem;
     }
-    .section-block {
-      margin-bottom: 3rem;
+    .info-item a {
+      color: var(--secondary);
+      text-decoration: none;
     }
-    @media screen and (max-width: 600px) {
-      nav {
+    .info-item a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+    footer p {
+      opacity: 0.8;
+    }
+    @media (max-width: 768px) {
+      .header-container {
         flex-direction: column;
-        align-items: center;
+        text-align: center;
+      }
+      nav ul {
+        margin-top: 1rem;
+        justify-content: center;
+      }
+      nav ul li {
+        margin: 0 0.8rem;
+      }
+      .hero h1 {
+        font-size: 2.3rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      section {
+        padding: 4rem 1rem;
+      }
+      .section-title {
+        font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <h1>LIA Inc.</h1>
-    <p>Securing Contracts. Delivering Results.</p>
-    <p><em>"Tailored Solutions. Strategic Partnerships. Proven Results."</em></p>
+    <div class="header-container">
+      <div class="logo">LIA <span>Inc.</span></div>
+      <nav>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#partner">Partner With Us</a></li>
+          <li><a href="#sectors">Sectors & Capabilities</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="#about">About Us</a>
-    <a href="#partner">Partner With Us</a>
-    <a href="#sectors">Sectors & Capabilities</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
-
-  <main>
-    <section id="about" class="section-block">
-      <h2>About Us</h2>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>LIA Inc.</h1>
+      <div class="signature">Securing Contracts. Delivering Results.</div>
+      <div class="tagline">Tailored Solutions. Strategic Partnerships. Proven Results.</div>
       <p>LIA Procurement Inc. is a trailblazing firm that combines procurement expertise with strategic insight to transform how businesses engage with Canada’s public sector landscape.</p>
-      <p>From day one, our mission has been guided by more than just business — it’s been about responsibility, community, and connection to land and people. As an Indigenous-led company, we bring forward the values of respect, reciprocity, and relationship-building in everything we do.</p>
-      <p>We built this company to solve the very challenges we once faced in our own communities. Today, we don’t just deliver solutions — we honor trust, uplift voices, and walk forward together, one partnership at a time.</p>
-    </section>
+      <a href="#services" class="btn">Explore Our Services</a>
+    </div>
+  </section>
 
-    <section id="partner" class="section-block">
-      <h2>Partner With Us</h2>
-      <p>We specialize in identifying, securing, and managing public sector contracts across all levels of government in Canada. We act as both a prime contractor and a strategic intermediary — connecting capable subcontractors with real opportunities.</p>
-      <p>Our Indigenous ownership positions us to contribute meaningfully to Canada’s evolving procurement strategy, with partnerships grounded in trust and shared success.</p>
-    </section>
-
-    <section id="sectors" class="section-block">
-      <h2>Sectors & Capabilities</h2>
-      <p>Through our strong partner network, we deliver across various industries and regions, without being bound by a single specialization. This flexibility allows us to adapt to the opportunity at hand and ensure project-specific expertise every time.</p>
-    </section>
-
-    <section id="services" class="section-block">
-      <h2>Services</h2>
-      <ul>
-        <li>Public Sector Contract Management</li>
-        <li>Proposal Development & Opportunity Identification</li>
-        <li>Business Development Advisory</li>
-        <li>Procurement Strategy & Navigation</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="section-block">
-      <h2>Contact</h2>
-      <div class="contact-info">
-        <p><strong>Email:</strong> <a href="mailto:procurement@liainc.ca">procurement@liainc.ca</a></p>
-        <p><strong>Phone:</strong> +1 (204) 390-3306</p>
-        <p><strong>Address:</strong> 333 Bay Street, Toronto, Ontario M5H 2R2</p>
-        <p><strong>Website:</strong> <a href="https://www.liainc.ca" target="_blank">www.liainc.ca</a></p>
+  <!-- About Us -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <div class="about-content">
+        <p>"From day one, our mission has been guided by more than just business — it’s been about responsibility, community, and connection to land and people. As an Indigenous-led company, we bring forward the values of respect, reciprocity, and relationship-building in everything we do.</p>
+        <div class="highlight">
+          We built this company to solve the very challenges we once faced in our own communities. Today, we don’t just deliver solutions — we honor trust, uplift voices, and walk forward together, one partnership at a time.
+        </div>
+        <p>Our company specializes in identifying, securing, and managing public sector contracts at the federal, provincial, and municipal levels across Canada. We actively participate in public tenders and government solicitations, acting both as a prime contractor and as a strategic intermediary connecting qualified subcontractors to awarded contracts. As an Indigenous-owned business, we are well-positioned to access unique procurement opportunities and contribute to the advancement of Canada's Indigenous procurement strategy.</p>
+        <p>In addition to contract execution, we provide business development and management services to companies seeking to expand their presence in the public sector. We help enterprises identify contract opportunities, prepare proposals, and navigate the public procurement process. Through a strong network of partners across various sectors and regions, both domestically and internationally, we are able to deliver a broad range of services and products without being limited to one industry or specialization.</p>
+        <p>Our flexible, partnership-driven model allows us to match the right expertise to each opportunity, ensuring successful outcomes for government clients and business partners alike.</p>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
+  <!-- Partner With Us -->
+  <section id="partner" style="background-color: var(--accent);">
+    <div class="container">
+      <h2 class="section-title">Partner With Us</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">
+        Join forces with LIA Inc. to unlock public sector opportunities. Whether you're a government agency seeking trusted delivery or a business looking to grow in the public market, our partnership model drives mutual success.
+      </p>
+      <div class="partnership">
+        <div class="service-card">
+          <img src="https://liainc.ca/wp-content/uploads/2025/08/leyvaine-davids-ytpknc-767w-unsplash-1.jpg" alt="Professionals collaborating" class="card-img" />
+          <div class="card-body">
+            <h3>For Government Clients</h3>
+            <p>We deliver reliable, compliant, and community-conscious solutions that meet public sector standards and support Indigenous economic participation.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Business collaboration" class="card-img" />
+          <div class="card-body">
+            <h3>For Businesses</h3>
+            <p>Gain access to our expertise, networks, and proven strategies to successfully enter and scale within Canada’s public procurement ecosystem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sectors & Capabilities -->
+  <section id="sectors">
+    <div class="container">
+      <h2 class="section-title">Sectors & Capabilities</h2>
+      <div class="sectors-grid">
+        <div class="sector-card">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Government building" class="card-img" />
+          <div class="card-body">
+            <h3>Federal Procurement</h3>
+            <p>Navigating complex federal tenders with precision and compliance, from innovation grants to large-scale infrastructure projects.</p>
+          </div>
+        </div>
+        <div class="sector-card">
+          <img src="https://images.unsplash.com/photo-1579546929518-9e396f526e10?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="City skyline" class="card-img" />
+          <div class="card-body">
+            <h3>Provincial & Municipal</h3>
+            <p>Supporting regional development through targeted engagement with provincial agencies and local governments.</p>
+          </div>
+        </div>
+        <div class="sector-card">
+          <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Construction site" class="card-img" />
+          <div class="card-body">
+            <h3>Construction & Infrastructure</h3>
+            <p>Delivering end-to-end project support for public works, transportation, and community development contracts.</p>
+          </div>
+        </div>
+        <div class="sector-card">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="IT services" class="card-img" />
+          <div class="card-body">
+            <h3>Technology & Consulting</h3>
+            <p>Providing digital transformation, cybersecurity, and advisory services tailored to public sector needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" style="background-color: #f1f5f9;">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Strategy meeting" class="card-img" />
+          <div class="card-body">
+            <h3>Procurement Strategies</h3>
+            <p>Expert guidance on navigating and securing public sector contracts across various government levels.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1586769852834-9c7dd49f9836?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Document preparation" class="card-img" />
+          <div class="card-body">
+            <h3>Bid Preparation</h3>
+            <p>Assistance with proposal development and submission for public procurement opportunities.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Contract signing" class="card-img" />
+          <div class="card-body">
+            <h3>Contract Management</h3>
+            <p>Comprehensive support in managing awarded contracts efficiently and effectively.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-info">
+        <div class="info-item">
+          <h3>Email</h3>
+          <p><a href="mailto:procurement@liainc.ca">procurement@liainc.ca</a></p>
+        </div>
+        <div class="info-item">
+          <h3>Phone</h3>
+          <p><a href="tel:+12043903306">+1 (204) 390-3306</a></p>
+        </div>
+        <div class="info-item">
+          <h3>Address</h3>
+          <p>333 Bay Street, Toronto, Ontario M5H 2R2</p>
+        </div>
+        <div class="info-item">
+          <h3>Website</h3>
+          <p><a href="https://www.liainc.ca" target="_blank">www.liainc.ca</a></p>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 2rem; font-style: italic;">
+        LIA Inc. — Acronym for Lisa, Ilias, & Ahmed initials
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 LIA Inc. All rights reserved.</p>
-    <p><small>Meaning of Name: Acronym for Lisa, Ilias, & Ahmed initials</small></p>
+    <p>&copy; 2025 LIA Procurement Inc. All rights reserved.</p>
   </footer>
 </body>
 </html>
+```
