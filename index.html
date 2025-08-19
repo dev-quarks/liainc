@@ -616,15 +616,80 @@
       observer.observe(el);
     });
 
-    // Contact form submit fallback (demo)
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-      contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Thank you for contacting LIA Procurement Inc. We will get back to you soon.');
-        this.reset();
-      });
-    }
-  </script>
+    ```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact LIA Procurement Inc.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8 bg-white p-8 rounded-xl shadow-lg">
+            <div class="text-center">
+                <h2 class="mt-6 text-3xl font-extrabold text-gray-900">
+                    Contact LIA Procurement Inc.
+                </h2>
+                <p class="mt-2 text-sm text-gray-600">
+                    We'd love to hear from you
+                </p>
+            </div>
+            <form id="contactForm" class="mt-8 space-y-6" action="mailto:procurement@liainc.ca" method="post" enctype="text/plain">
+                <div class="rounded-md -space-y-px">
+                    <div class="mb-4">
+                        <label for="name" class="sr-only">Full Name</label>
+                        <input id="name" name="name" type="text" required 
+                               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" 
+                               placeholder="Full Name">
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="sr-only">Email address</label>
+                        <input id="email" name="email" type="email" required 
+                               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" 
+                               placeholder="Email address">
+                    </div>
+                    <div class="mb-4">
+                        <label for="phone" class="sr-only">Phone Number</label>
+                        <input id="phone" name="phone" type="tel" 
+                               class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" 
+                               placeholder="Phone Number">
+                    </div>
+                    <div>
+                        <label for="message" class="sr-only">Message</label>
+                        <textarea id="message" name="message" rows="4" required 
+                                  class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm" 
+                                  placeholder="Your message"></textarea>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" 
+                            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+                        Send Message
+                    </button>
+                </div>
+            </form>
+            <p class="mt-4 text-xs text-gray-500 text-center">
+                Note: This form will open your default email client to send to procurement@liainc.ca
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Contact form submit fallback (demo)
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                // The form uses mailto: which will open the user's default email client
+                // This alert provides feedback that the action has been initiated
+                setTimeout(() => {
+                    alert('Thank you for contacting LIA Procurement Inc. We will get back to you soon.');
+                }, 500);
+                // Note: We don't reset the form here because the mailto: action needs the form data
+            });
+        }
+    </script>
 </body>
 </html>
