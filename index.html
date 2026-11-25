@@ -9,631 +9,101 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#0A1F3A;
-  --navy-2:#132C50;
-  --accent:#1E63D6;
-  --accent-soft:#E8F0FC;
-  --ink:#16202E;
-  --muted:#5B6573;
-  --line:#E2E6EC;
-  --bg:#FFFFFF;
-  --bg-soft:#F5F7FA;
-  --white:#FFFFFF;
-  --on-dark:#E9EEF5;
-  --on-dark-muted:#A9B7CB;
-}
+:root{--navy:#0A1F3A;--navy-2:#132C50;--accent:#1E63D6;--accent-soft:#E8F0FC;--ink:#16202E;--muted:#5B6573;--line:#E2E6EC;--bg:#FFFFFF;--bg-soft:#F5F7FA;--white:#FFFFFF;--on-dark:#E9EEF5;--on-dark-muted:#A9B7CB;}
 *{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{
-  font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
-  color:var(--ink);
-  background:var(--bg);
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-img{max-width:100%;display:block;}
-a{color:inherit;text-decoration:none;}
-ul{list-style:none;}
-button{font-family:inherit;cursor:pointer;}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
-
-.wrap{max-width:1200px;margin:0 auto;padding:0 40px;}
-@media (max-width:640px){ .wrap{padding:0 22px;} }
-
-h1,h2,h3{font-weight:600;letter-spacing:-0.02em;line-height:1.15;}
-
-.kicker{
-  font-size:0.8rem;
-  font-weight:600;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:var(--accent);
-  margin-bottom:18px;
-}
-
-section{padding:112px 0;}
-.on-dark{background:var(--navy);color:var(--on-dark);}
-.on-soft{background:var(--bg-soft);}
-
-.btn{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:0.95rem;font-weight:500;
-  padding:14px 26px;
-  border-radius:2px;
-  border:1px solid var(--accent);
-  background:var(--accent);
-  color:var(--white);
-  transition:background .2s ease,border-color .2s ease,color .2s ease;
-  white-space:nowrap;
-}
-.btn:hover{background:#1755BD;border-color:#1755BD;}
-.btn-ghost{background:transparent;color:var(--navy);border-color:var(--navy);}
-.btn-ghost:hover{background:var(--navy);color:var(--white);border-color:var(--navy);}
-.on-dark .btn-ghost{color:var(--white);border-color:rgba(255,255,255,0.5);}
-.on-dark .btn-ghost:hover{background:var(--white);color:var(--navy);border-color:var(--white);}
-.btn:disabled{opacity:.6;cursor:wait;}
-
-/* ---------- NAV ---------- */
-header.site-nav{
-  position:sticky;top:0;z-index:100;
-  background:rgba(255,255,255,0.97);
-  backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;}
-.brand{display:flex;align-items:center;gap:12px;color:var(--navy);}
-.brand-mark{
-  width:40px;height:40px;border-radius:50%;
-  background:var(--navy);color:var(--white);
-  display:flex;align-items:center;justify-content:center;
-  font-size:0.72rem;font-weight:700;letter-spacing:0.04em;
-  overflow:hidden;position:relative;flex-shrink:0;
-}
-.brand-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;}
-.brand-mark.has-logo img{display:block;}
-.brand-mark.has-logo span{display:none;}
-.brand-name{font-weight:700;font-size:1rem;letter-spacing:-0.01em;}
-
-.nav-links{display:none;align-items:center;gap:34px;}
-.nav-links a{font-size:0.92rem;color:var(--ink);position:relative;padding:6px 0;}
-.nav-links a:hover{color:var(--accent);}
-@media (min-width:920px){ .nav-links{display:flex;} .menu-btn{display:none;} }
-.nav-cta{display:none;padding:11px 20px;}
-@media (min-width:920px){ .nav-cta{display:inline-flex;} }
-.menu-btn{
-  background:none;border:1px solid var(--line);width:42px;height:42px;border-radius:2px;
-  font-size:1.1rem;color:var(--navy);
-}
-
-.mobile-menu{display:none;border-top:1px solid var(--line);background:var(--white);}
-.mobile-menu.open{display:block;}
-.mobile-menu a{display:block;padding:16px 22px;border-bottom:1px solid var(--line);font-size:0.98rem;}
-
-/* ---------- HERO ---------- */
-.hero{padding:120px 0 128px;background:var(--white);}
-.hero h1{
-  font-size:clamp(2.4rem,5vw,4.1rem);
-  color:var(--navy);
-  max-width:20ch;
-  margin-bottom:30px;
-}
-.hero-sub{
-  font-size:1.14rem;color:var(--muted);
-  max-width:58ch;margin-bottom:44px;line-height:1.7;
-}
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
-.hero-rule{
-  margin-top:96px;
-  border-top:1px solid var(--line);
-  display:grid;grid-template-columns:repeat(4,1fr);
-}
-.hero-rule div{
-  padding:26px 24px 0 0;
-  font-size:0.92rem;color:var(--navy);font-weight:500;
-}
-.hero-rule div span{display:block;color:var(--muted);font-weight:400;font-size:0.85rem;margin-top:4px;}
-@media (max-width:820px){ .hero-rule{grid-template-columns:1fr 1fr;} .hero-rule div{padding-bottom:24px;} }
-
-/* ---------- SECTION HEADS ---------- */
-.section-head{max-width:720px;margin-bottom:64px;}
-.section-head h2{font-size:clamp(2rem,3.4vw,2.8rem);color:var(--navy);}
-.on-dark .section-head h2{color:var(--white);}
-.section-head p{margin-top:20px;font-size:1.05rem;color:var(--muted);}
-.on-dark .section-head p{color:var(--on-dark-muted);}
-
-/* ---------- SECTORS ---------- */
-.sector-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);
-  border-top:1px solid var(--line);border-left:1px solid var(--line);
-}
-@media (max-width:760px){ .sector-grid{grid-template-columns:1fr;} }
-.sector{
-  padding:48px 44px 52px;
-  border-right:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  background:var(--white);
-  transition:background .25s ease;
-}
-.sector:hover{background:var(--bg-soft);}
-.sector-num{font-size:0.85rem;font-weight:600;color:var(--accent);margin-bottom:28px;display:block;}
-.sector h3{font-size:1.6rem;color:var(--navy);margin-bottom:16px;}
-.sector > p{color:var(--muted);font-size:0.98rem;margin-bottom:26px;}
-.sector ul li{
-  font-size:0.92rem;color:var(--ink);
-  padding:10px 0;border-top:1px solid var(--line);
-}
-.sector ul li:last-child{border-bottom:1px solid var(--line);}
-
-/* ---------- SERVICES ---------- */
-.service-list{display:flex;flex-direction:column;}
-.service{
-  display:grid;grid-template-columns:70px 1fr 1.3fr;gap:40px;
-  padding:40px 0;border-top:1px solid rgba(255,255,255,0.14);
-  align-items:start;
-}
-.service:last-child{border-bottom:1px solid rgba(255,255,255,0.14);}
-.service-num{font-size:0.9rem;color:#7FA6E8;font-weight:600;padding-top:6px;}
-.service h3{font-size:1.5rem;color:var(--white);}
-.service p{color:var(--on-dark-muted);font-size:0.98rem;line-height:1.7;}
-@media (max-width:820px){
-  .service{grid-template-columns:50px 1fr;gap:14px;}
-  .service p{grid-column:2;}
-}
-
-/* ---------- APPROACH ---------- */
-.steps{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:48px;
-}
-@media (max-width:860px){ .steps{grid-template-columns:1fr;gap:40px;} }
-.step{border-top:3px solid var(--navy);padding-top:26px;}
-.step .step-label{font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block;}
-.step h3{font-size:1.4rem;color:var(--navy);margin-bottom:14px;}
-.step p{color:var(--muted);font-size:0.98rem;line-height:1.7;}
-
-/* ---------- ABOUT ---------- */
-.about-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:84px;align-items:start;}
-@media (max-width:900px){ .about-grid{grid-template-columns:1fr;gap:48px;} }
-.about-lead{font-size:1.5rem;line-height:1.45;color:var(--navy);font-weight:500;letter-spacing:-0.01em;}
-.about-copy p{color:var(--muted);font-size:1.02rem;line-height:1.75;margin-top:22px;}
-.facts{border-top:1px solid var(--line);}
-.fact{padding:24px 0;border-bottom:1px solid var(--line);}
-.fact strong{display:block;color:var(--navy);font-size:1rem;margin-bottom:6px;}
-.fact span{color:var(--muted);font-size:0.94rem;}
-.indigenous-note{
-  margin-top:40px;font-size:0.88rem;color:var(--muted);
-  padding-left:16px;border-left:2px solid var(--accent);
-}
-
-/* ---------- CONTACT ---------- */
-.contact-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:80px;}
-@media (max-width:900px){ .contact-grid{grid-template-columns:1fr;gap:56px;} }
-.contact-grid h2{font-size:clamp(2rem,3.4vw,2.8rem);color:var(--navy);margin-bottom:20px;}
-.contact-grid > div > p{color:var(--muted);font-size:1.02rem;margin-bottom:40px;}
-.contact-details{border-top:1px solid var(--line);}
-.contact-details div{padding:22px 0;border-bottom:1px solid var(--line);}
-.contact-details .label{font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;}
-.contact-details a,.contact-details span.value{color:var(--navy);font-size:1.02rem;}
-.contact-details a:hover{color:var(--accent);}
-
-form.inquiry{display:grid;gap:22px;}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
-@media (max-width:600px){ .form-row{grid-template-columns:1fr;} }
-.field{display:flex;flex-direction:column;gap:8px;}
-.field label{font-size:0.86rem;font-weight:500;color:var(--navy);}
-.field input,.field select,.field textarea{
-  font-family:inherit;font-size:0.98rem;color:var(--ink);
-  background:var(--white);
-  border:1px solid #C9D0DA;border-radius:2px;
-  padding:13px 14px;
-  transition:border-color .2s ease,box-shadow .2s ease;
-}
-.field input:focus,.field select:focus,.field textarea:focus{
-  outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(30,99,214,0.15);
-}
-.field textarea{min-height:130px;resize:vertical;}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}
-.form-foot{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
-.form-note{font-size:0.84rem;color:var(--muted);}
-.form-status{display:none;font-size:0.95rem;padding:16px 18px;border-radius:2px;}
-.form-status.show{display:block;}
-.form-status.ok{background:#E9F6EE;color:#14623A;border:1px solid #BFE3CD;}
-.form-status.err{background:#FDECEC;color:#8A1C1C;border:1px solid #F1C4C4;}
-
-/* ---------- FOOTER ---------- */
-footer{background:var(--navy);color:var(--on-dark-muted);padding:72px 0 36px;}
-.footer-top{
-  display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;
-  padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.12);
-}
-@media (max-width:800px){ .footer-top{grid-template-columns:1fr;gap:36px;} }
-footer .brand{color:var(--white);margin-bottom:18px;}
-footer .brand-mark{background:var(--white);color:var(--navy);}
-footer p{font-size:0.92rem;max-width:36ch;line-height:1.7;}
-footer h4{font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--white);margin-bottom:18px;}
-footer ul{display:flex;flex-direction:column;gap:12px;font-size:0.92rem;}
-footer ul a:hover{color:var(--white);}
-.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:28px;font-size:0.82rem;}
+html{scroll-behavior:smooth;scroll-padding-top:90px;}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;}
+img,video{max-width:100%;display:block;}a{color:inherit;text-decoration:none;}ul{list-style:none;}button{font-family:inherit;cursor:pointer;}:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px;}@media(max-width:640px){.wrap{padding:0 22px;}}
+h1,h2,h3{font-weight:600;letter-spacing:-.02em;line-height:1.15;}.kicker{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
+section{padding:112px 0;}.on-dark{background:var(--navy);color:var(--on-dark);}.on-soft{background:var(--bg-soft);}
+.btn{display:inline-flex;align-items:center;gap:10px;font-size:.95rem;font-weight:500;padding:14px 26px;border-radius:2px;border:1px solid var(--accent);background:var(--accent);color:var(--white);transition:background .2s,border-color .2s,color .2s,transform .2s;white-space:nowrap;}.btn:hover{background:#1755BD;border-color:#1755BD;transform:translateY(-2px);}.btn-ghost{background:transparent;color:var(--navy);border-color:var(--navy);}.btn-ghost:hover{background:var(--navy);color:var(--white);border-color:var(--navy);}.on-dark .btn-ghost{color:var(--white);border-color:rgba(255,255,255,.5);}.on-dark .btn-ghost:hover{background:var(--white);color:var(--navy);border-color:var(--white);}.btn:disabled{opacity:.6;cursor:wait;}
+header.site-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between;}.brand{display:flex;align-items:center;gap:12px;color:var(--navy);}.brand-mark{width:40px;height:40px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:700;letter-spacing:.04em;overflow:hidden;position:relative;flex-shrink:0;}.brand-mark img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none;}.brand-mark.has-logo img{display:block;}.brand-mark.has-logo span{display:none;}.brand-name{font-weight:700;font-size:1rem;letter-spacing:-.01em;}.nav-links{display:none;align-items:center;gap:30px;}.nav-links a{font-size:.92rem;color:var(--ink);position:relative;padding:6px 0;}.nav-links a:hover{color:var(--accent);}@media(min-width:920px){.nav-links{display:flex;}.menu-btn{display:none;}}.nav-cta{display:none;padding:11px 20px;}@media(min-width:920px){.nav-cta{display:inline-flex;}}.menu-btn{background:none;border:1px solid var(--line);width:42px;height:42px;border-radius:2px;font-size:1.1rem;color:var(--navy);}.mobile-menu{display:none;border-top:1px solid var(--line);background:var(--white);}.mobile-menu.open{display:block;}.mobile-menu a{display:block;padding:16px 22px;border-bottom:1px solid var(--line);font-size:.98rem;}
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:clamp(64px,9vw,112px) 0 70px;background:radial-gradient(ellipse at 82% 10%,#e8f0fc 0,rgba(232,240,252,0) 38%),var(--white);}.hero-layout{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:clamp(36px,6vw,76px);}.hero-copy{position:relative;z-index:1;}.hero h1{font-size:clamp(2.5rem,5vw,4.35rem);color:var(--navy);max-width:18ch;margin-bottom:24px;}.hero-sub{font-size:1.08rem;color:var(--muted);max-width:58ch;margin-bottom:34px;line-height:1.75;}.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}.hero-media{position:relative;min-width:0;isolation:isolate;}.hero-video-frame{position:relative;overflow:hidden;aspect-ratio:4/3;border-radius:5px;background:linear-gradient(145deg,#173b68,#07182c);box-shadow:0 28px 70px rgba(10,31,58,.22);}.hero-video-frame:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,18,35,.05) 35%,rgba(5,18,35,.58));pointer-events:none;}.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}.media-caption{position:absolute;z-index:1;left:24px;right:24px;bottom:20px;color:#fff;display:flex;align-items:center;gap:10px;font-size:.85rem;font-weight:500;}.media-caption:before{content:"";width:8px;height:8px;border-radius:50%;background:#79b2ff;box-shadow:0 0 0 5px rgba(121,178,255,.2);}.media-index{position:absolute;z-index:2;right:18px;top:18px;padding:8px 11px;background:rgba(8,27,51,.65);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.72rem;letter-spacing:.1em;}.hero-media:before{content:"";position:absolute;z-index:-1;width:150px;height:150px;right:-28px;top:-28px;border:1px solid rgba(30,99,214,.22);border-radius:50%;}.hero-rule{margin-top:76px;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);}.hero-rule div{padding:23px 24px 0 0;font-size:.92rem;color:var(--navy);font-weight:600;}.hero-rule div span{display:block;color:var(--muted);font-weight:400;font-size:.83rem;margin-top:4px;}@media(max-width:820px){.hero-layout{grid-template-columns:1fr;}.hero-copy{max-width:720px;}.hero-media{max-width:720px;width:100%;}.hero-rule{grid-template-columns:1fr 1fr;}.hero-rule div{padding-bottom:20px;}}@media(max-width:460px){.hero-actions .btn{width:100%;justify-content:center;}.hero-video-frame{aspect-ratio:16/11;}}
+.section-head{max-width:720px;margin-bottom:64px;}.section-head h2{font-size:clamp(2rem,3.4vw,2.8rem);color:var(--navy);}.on-dark .section-head h2{color:var(--white);}.section-head p{margin-top:20px;font-size:1.05rem;color:var(--muted);}.on-dark .section-head p{color:var(--on-dark-muted);}
+.sector-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line);}@media(max-width:760px){.sector-grid{grid-template-columns:1fr;}}.sector{padding:44px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--white);transition:background .25s,transform .25s,box-shadow .25s;}.sector:hover{background:var(--bg-soft);transform:translateY(-3px);box-shadow:0 14px 32px rgba(10,31,58,.06);}.sector-num{font-size:.85rem;font-weight:600;color:var(--accent);margin-bottom:25px;display:block;}.sector h3{font-size:1.6rem;color:var(--navy);margin-bottom:16px;}.sector>p{color:var(--muted);font-size:.98rem;margin-bottom:26px;}.sector ul li{font-size:.92rem;color:var(--ink);padding:10px 0;border-top:1px solid var(--line);}.sector ul li:last-child{border-bottom:1px solid var(--line);}
+.service-list{display:flex;flex-direction:column;}.service{display:grid;grid-template-columns:70px 1fr 1.3fr;gap:40px;padding:36px 0;border-top:1px solid rgba(255,255,255,.14);align-items:start;}.service:last-child{border-bottom:1px solid rgba(255,255,255,.14);}.service-num{font-size:.9rem;color:#7FA6E8;font-weight:600;padding-top:6px;}.service h3{font-size:1.5rem;color:var(--white);}.service p{color:var(--on-dark-muted);font-size:.98rem;line-height:1.7;}@media(max-width:820px){.service{grid-template-columns:50px 1fr;gap:14px;}.service p{grid-column:2;}}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;}@media(max-width:860px){.steps{grid-template-columns:1fr;gap:40px;}}.step{border-top:3px solid var(--navy);padding-top:26px;}.step-label{font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;display:block;}.step h3{font-size:1.4rem;color:var(--navy);margin-bottom:14px;}.step p{color:var(--muted);font-size:.98rem;line-height:1.7;}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:84px;align-items:start;}@media(max-width:900px){.about-grid{grid-template-columns:1fr;gap:48px;}}.about-lead{font-size:1.5rem;line-height:1.45;color:var(--navy);font-weight:500;letter-spacing:-.01em;}.about-copy p{color:var(--muted);font-size:1.02rem;line-height:1.75;margin-top:22px;}.facts{border-top:1px solid var(--line);}.fact{padding:24px 0;border-bottom:1px solid var(--line);}.fact strong{display:block;color:var(--navy);font-size:1rem;margin-bottom:6px;}.fact span{color:var(--muted);font-size:.94rem;}.indigenous-note{margin-top:40px;font-size:.88rem;color:var(--muted);padding-left:16px;border-left:2px solid var(--accent);}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;}@media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:56px;}}.contact-grid h2{font-size:clamp(2rem,3.4vw,2.8rem);color:var(--navy);margin-bottom:20px;}.contact-grid>div>p{color:var(--muted);font-size:1.02rem;margin-bottom:40px;}.contact-details{border-top:1px solid var(--line);}.contact-details>div{padding:22px 0;border-bottom:1px solid var(--line);}.contact-details .label{font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:6px;}.contact-details a,.contact-details span.value{color:var(--navy);font-size:1.02rem;}.contact-details a:hover{color:var(--accent);}
+form.inquiry{display:grid;gap:22px;}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:22px;}@media(max-width:600px){.form-row{grid-template-columns:1fr;}}.field{display:flex;flex-direction:column;gap:8px;}.field label{font-size:.86rem;font-weight:500;color:var(--navy);}.field input,.field select,.field textarea{font-family:inherit;font-size:.98rem;color:var(--ink);background:var(--white);border:1px solid #C9D0DA;border-radius:2px;padding:13px 14px;transition:border-color .2s,box-shadow .2s;}.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(30,99,214,.15);}.field textarea{min-height:130px;resize:vertical;}.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;}.form-foot{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}.form-note{font-size:.84rem;color:var(--muted);}.form-status{display:none;font-size:.95rem;padding:16px 18px;border-radius:2px;}.form-status.show{display:block;}.form-status.ok{background:#E9F6EE;color:#14623A;border:1px solid #BFE3CD;}.form-status.err{background:#FDECEC;color:#8A1C1C;border:1px solid #F1C4C4;}
+footer{background:var(--navy);color:var(--on-dark-muted);padding:72px 0 36px;}.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,.12);}@media(max-width:800px){.footer-top{grid-template-columns:1fr;gap:36px;}}footer .brand{color:var(--white);margin-bottom:18px;}footer .brand-mark{background:var(--white);color:var(--navy);}footer p{font-size:.92rem;max-width:36ch;line-height:1.7;}footer h4{font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--white);margin-bottom:18px;}footer ul{display:flex;flex-direction:column;gap:12px;font-size:.92rem;}footer ul a:hover{color:var(--white);}.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:28px;font-size:.82rem;}
+/* Content reveals are enabled only when JavaScript is available. */
+.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease;}.js .reveal.is-visible{opacity:1;transform:none;}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}.js .reveal{opacity:1;transform:none;transition:none;}.btn,.sector{transition:none;}}
 </style>
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
-
 <header class="site-nav" id="siteNav">
   <div class="wrap nav-inner">
-    <a href="#home" class="brand" aria-label="LIA Procurement Inc. home">
-      <span class="brand-mark" data-brand-mark>
-        <span>LIA</span>
-        <img src="-t-e-x-t_-t-o_-i-m-a-g-e-4e4.png" alt="" data-brand-img onerror="this.parentElement.classList.remove('has-logo')" onload="this.parentElement.classList.add('has-logo')">
-      </span>
-      <span class="brand-name">LIA Procurement Inc.</span>
-    </a>
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#sectors">Sectors</a>
-      <a href="#services">Services</a>
-      <a href="#approach">Approach</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <a href="#home" class="brand" aria-label="LIA Procurement Inc. home"><span class="brand-mark" data-brand-mark><span>LIA</span><img src="-t-e-x-t_-t-o_-i-m-a-g-e-4e4.png" alt="" onerror="this.parentElement.classList.remove('has-logo')" onload="this.parentElement.classList.add('has-logo')"></span><span class="brand-name">LIA Procurement Inc.</span></a>
+    <nav class="nav-links" aria-label="Primary"><a href="#sectors">Sectors</a><a href="#services">Services</a><a href="#approach">Approach</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
     <a href="#contact" class="btn nav-cta">Start a conversation</a>
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
   </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#sectors">Sectors</a>
-    <a href="#services">Services</a>
-    <a href="#approach">Approach</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </div>
+  <div class="mobile-menu" id="mobileMenu"><a href="#sectors">Sectors</a><a href="#services">Services</a><a href="#approach">Approach</a><a href="#about">About</a><a href="#contact">Contact</a></div>
 </header>
-
 <main>
-
-  <!-- HERO -->
   <section class="hero" id="home">
     <div class="wrap">
-      <div class="kicker">Public Sector Procurement, Canada</div>
-      <h1>Winning public sector contracts, delivered with discipline.</h1>
-      <p class="hero-sub">LIA Procurement Inc. helps organizations secure and deliver government work across transportation, energy, security, and equipment and technology. We bring procurement strategy, bid preparation, and contract management under one roof.</p>
-      <div class="hero-actions">
-        <a href="#sectors" class="btn">Explore our sectors</a>
-        <a href="#contact" class="btn btn-ghost">Contact our team</a>
+      <div class="hero-layout">
+        <div class="hero-copy reveal">
+          <div class="kicker">Public Sector Procurement, Canada</div>
+          <h1>Winning public sector contracts, delivered with discipline.</h1>
+          <p class="hero-sub">LIA Procurement Inc. helps organizations secure and deliver government work across transportation, energy, security, and equipment and technology. We bring procurement strategy, bid preparation, and contract management under one roof.</p>
+          <div class="hero-actions"><a href="#sectors" class="btn">Explore our sectors <span aria-hidden="true">↘</span></a><a href="#contact" class="btn btn-ghost">Contact our team</a></div>
+        </div>
+        <div class="hero-media reveal">
+          <div class="hero-video-frame">
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" aria-label="Looping hero video illustrating LIA Procurement's work across public-sector infrastructure and technology">
+              <source src="14202597_3840_2160_60fps.mp4" type="video/mp4">
+            </video>
+            <span class="media-index" aria-hidden="true">LIA / CANADA</span>
+            <div class="media-caption" aria-hidden="true">Public sector projects. Progress built together.</div>
+          </div>
+        </div>
       </div>
-      <div class="hero-rule">
-        <div>Transportation<span>Roads, transit, and mobility</span></div>
-        <div>Energy<span>Generation, grid, and utilities</span></div>
-        <div>Security<span>Physical and operational security</span></div>
-        <div>Equipment &amp; Technology<span>Supply, systems, and digital services</span></div>
-      </div>
+      <div class="hero-rule reveal"><div>Transportation<span>Roads, transit, and mobility</span></div><div>Energy<span>Generation, grid, and utilities</span></div><div>Security<span>Physical and operational security</span></div><div>Equipment &amp; Technology<span>Supply, systems, and digital services</span></div></div>
     </div>
   </section>
-
-  <!-- SECTORS -->
-  <section class="on-soft" id="sectors">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="kicker">Where we work</div>
-        <h2>Four sectors. Deep public sector experience in each.</h2>
-        <p>Government buyers evaluate suppliers on technical fit, compliance, and delivery track record. We focus on four categories where we know the requirements, the buyers, and the evaluation criteria.</p>
-      </div>
-      <div class="sector-grid">
-        <article class="sector">
-          <span class="sector-num">01</span>
-          <h3>Transportation</h3>
-          <p>Support for public works and mobility projects from opportunity identification through contract delivery.</p>
-          <ul>
-            <li>Roads, bridges, and transit infrastructure</li>
-            <li>Fleet, logistics, and maintenance services</li>
-            <li>Planning, engineering, and advisory services</li>
-          </ul>
-        </article>
-        <article class="sector">
-          <span class="sector-num">02</span>
-          <h3>Energy</h3>
-          <p>Procurement support for generation, transmission, and utility programs where reliability and compliance are paramount.</p>
-          <ul>
-            <li>Generation and renewable energy projects</li>
-            <li>Grid modernization and utility services</li>
-            <li>Energy efficiency and retrofit programs</li>
-          </ul>
-        </article>
-        <article class="sector">
-          <span class="sector-num">03</span>
-          <h3>Security</h3>
-          <p>Bids for physical, operational, and personnel security services and the systems that support them.</p>
-          <ul>
-            <li>Physical security and access control</li>
-            <li>Monitoring and response services</li>
-            <li>Security assessment and compliance</li>
-          </ul>
-        </article>
-        <article class="sector">
-          <span class="sector-num">04</span>
-          <h3>Equipment &amp; Technology</h3>
-          <p>Supply and integration of equipment, software, and digital services for government operations.</p>
-          <ul>
-            <li>Equipment supply and lifecycle management</li>
-            <li>Software, IT infrastructure, and cloud services</li>
-            <li>Digital transformation and data advisory</li>
-          </ul>
-        </article>
-      </div>
+  <section class="on-soft" id="sectors"><div class="wrap"><div class="section-head reveal"><div class="kicker">Where we work</div><h2>Four sectors. Deep public sector experience in each.</h2><p>Government buyers evaluate suppliers on technical fit, compliance, and delivery track record. We focus on four categories where we know the requirements, buyers, and evaluation criteria.</p></div>
+    <div class="sector-grid">
+      <article class="sector reveal"><span class="sector-num">01</span><h3>Transportation</h3><p>Support for public works and mobility projects from opportunity identification through contract delivery.</p><ul><li>Roads, bridges, and transit infrastructure</li><li>Fleet, logistics, and maintenance services</li><li>Planning, engineering, and advisory services</li></ul></article>
+      <article class="sector reveal"><span class="sector-num">02</span><h3>Energy</h3><p>Procurement support for generation, transmission, and utility programs where reliability and compliance are paramount.</p><ul><li>Generation and renewable energy projects</li><li>Grid modernization and utility services</li><li>Energy efficiency and retrofit programs</li></ul></article>
+      <article class="sector reveal"><span class="sector-num">03</span><h3>Security</h3><p>Bids for physical, operational, and personnel security services and the systems that support them.</p><ul><li>Physical security and access control</li><li>Monitoring and response services</li><li>Security assessment and compliance</li></ul></article>
+      <article class="sector reveal"><span class="sector-num">04</span><h3>Equipment &amp; Technology</h3><p>Supply and integration of equipment, software, and digital services for government operations.</p><ul><li>Equipment supply and lifecycle management</li><li>Software, IT infrastructure, and cloud services</li><li>Digital transformation and data advisory</li></ul></article>
     </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="on-dark" id="services">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="kicker" style="color:#7FA6E8;">What we do</div>
-        <h2>Support across the full procurement lifecycle.</h2>
-        <p>Whether you are bidding for the first time or managing an active contract, we work alongside your team at each stage.</p>
-      </div>
-      <div class="service-list">
-        <div class="service">
-          <div class="service-num">01</div>
-          <h3>Procurement Strategy</h3>
-          <p>We identify the right opportunities, assess fit and competition, and build a plan for which solicitations to pursue and how to position for each one.</p>
-        </div>
-        <div class="service">
-          <div class="service-num">02</div>
-          <h3>Bid Preparation</h3>
-          <p>Proposal development, technical writing, compliance review, and submission management, structured to answer the evaluation criteria directly.</p>
-        </div>
-        <div class="service">
-          <div class="service-num">03</div>
-          <h3>Contract Management</h3>
-          <p>Post-award support covering delivery milestones, compliance reporting, and client communication, so contracts stay on track and relationships hold.</p>
-        </div>
-        <div class="service">
-          <div class="service-num">04</div>
-          <h3>Business Development</h3>
-          <p>Market mapping, buyer relationship planning, and teaming arrangements that help you build a sustained public sector pipeline.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- APPROACH -->
-  <section id="approach">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="kicker">How we work</div>
-        <h2>A disciplined approach to every solicitation.</h2>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <span class="step-label">Step 01</span>
-          <h3>Assess</h3>
-          <p>We confirm that an opportunity matches your capabilities, past performance, and commercial goals before any effort goes into a bid.</p>
-        </div>
-        <div class="step">
-          <span class="step-label">Step 02</span>
-          <h3>Prepare</h3>
-          <p>We build a compliant, evaluation-focused submission and review it against the solicitation requirements before it goes out.</p>
-        </div>
-        <div class="step">
-          <span class="step-label">Step 03</span>
-          <h3>Deliver</h3>
-          <p>After award, we help manage performance, reporting, and stakeholder communication so that the contract builds your reputation.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="on-soft" id="about">
-    <div class="wrap about-grid">
-      <div>
-        <div class="kicker">About LIA</div>
-        <p class="about-lead">LIA Procurement Inc. is a Canadian procurement firm focused on the public sector. Our work is built on a clear understanding of how government buyers evaluate suppliers and what it takes to deliver on a contract.</p>
-        <div class="about-copy">
-          <p>We work with federal, provincial, and municipal clients and with the suppliers who want to serve them. Our clients range from established firms entering new markets to organizations pursuing their first government contract.</p>
-          <p>Every engagement starts with fit. We match the right expertise to the right opportunity and stay involved through delivery.</p>
-        </div>
-        <p class="indigenous-note">LIA Procurement Inc. is an Indigenous-owned firm.</p>
-      </div>
-      <div class="facts">
-        <div class="fact"><strong>Three levels of government</strong><span>Federal, provincial, and municipal procurement experience.</span></div>
-        <div class="fact"><strong>Four core sectors</strong><span>Transportation, energy, security, and equipment and technology.</span></div>
-        <div class="fact"><strong>Full lifecycle support</strong><span>Strategy, bid preparation, contract management, and business development.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="wrap contact-grid">
-      <div>
-        <div class="kicker">Get in touch</div>
-        <h2>Tell us about the opportunity.</h2>
-        <p>Share a bit about your organization and what you are working on. A member of our team will reply within one business day.</p>
-        <div class="contact-details">
-          <div>
-            <span class="label">Email</span>
-            <a href="mailto:procurement@liainc.ca">procurement@liainc.ca</a>
-          </div>
-          <div>
-            <span class="label">Office</span>
-            <span class="value">200 Bay Street, Toronto, Ontario M5J 2T6</span>
-          </div>
-          <div>
-            <span class="label">Website</span>
-            <a href="https://www.liainc.ca">www.liainc.ca</a>
-          </div>
-        </div>
-      </div>
-
-      <form class="inquiry" id="inquiryForm" novalidate>
-        <input type="hidden" name="_subject" value="New inquiry from liainc.ca">
-        <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-        <div class="form-row">
-          <div class="field">
-            <label for="name">Full name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required>
-          </div>
-          <div class="field">
-            <label for="email">Work email</label>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="field">
-            <label for="organization">Organization</label>
-            <input id="organization" name="organization" type="text" autocomplete="organization">
-          </div>
-          <div class="field">
-            <label for="sector">Sector of interest</label>
-            <select id="sector" name="sector">
-              <option value="">Select a sector</option>
-              <option>Transportation</option>
-              <option>Energy</option>
-              <option>Security</option>
-              <option>Equipment &amp; Technology</option>
-              <option>More than one sector</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label for="service">Service needed</label>
-          <select id="service" name="service">
-            <option value="">Select a service</option>
-            <option>Procurement Strategy</option>
-            <option>Bid Preparation</option>
-            <option>Contract Management</option>
-            <option>Business Development</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Briefly describe the opportunity, solicitation, or question."></textarea>
-        </div>
-
-        <div class="form-foot">
-          <button type="submit" class="btn" id="submitBtn">Send inquiry</button>
-          <span class="form-note">We reply within one business day.</span>
-        </div>
-        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
-      </form>
-    </div>
-  </section>
-
+  </div></section>
+  <section class="on-dark" id="services"><div class="wrap"><div class="section-head reveal"><div class="kicker" style="color:#7FA6E8">What we do</div><h2>Support across the full procurement lifecycle.</h2><p>Whether you are bidding for the first time or managing an active contract, we work alongside your team at each stage.</p></div>
+    <div class="service-list"><div class="service reveal"><div class="service-num">01</div><h3>Procurement Strategy</h3><p>We identify the right opportunities, assess fit and competition, and build a plan for which solicitations to pursue and how to position for each one.</p></div><div class="service reveal"><div class="service-num">02</div><h3>Bid Preparation</h3><p>Proposal development, technical writing, compliance review, and submission management, structured to answer the evaluation criteria directly.</p></div><div class="service reveal"><div class="service-num">03</div><h3>Contract Management</h3><p>Post-award support covering delivery milestones, compliance reporting, and client communication, so contracts stay on track and relationships hold.</p></div><div class="service reveal"><div class="service-num">04</div><h3>Business Development</h3><p>Market mapping, buyer relationship planning, and teaming arrangements that help you build a sustained public sector pipeline.</p></div></div>
+  </div></section>
+  <section id="approach"><div class="wrap"><div class="section-head reveal"><div class="kicker">How we work</div><h2>A disciplined approach to every solicitation.</h2></div><div class="steps"><article class="step reveal"><span class="step-label">Step 01</span><h3>Assess</h3><p>We confirm that an opportunity matches your capabilities, past performance, and commercial goals before any effort goes into a bid.</p></article><article class="step reveal"><span class="step-label">Step 02</span><h3>Prepare</h3><p>We build a compliant, evaluation-focused submission and review it against the solicitation requirements before it goes out.</p></article><article class="step reveal"><span class="step-label">Step 03</span><h3>Deliver</h3><p>After award, we help manage performance, reporting, and stakeholder communication so that the contract builds your reputation.</p></article></div></div></section>
+  <section class="on-soft" id="about"><div class="wrap about-grid"><div class="reveal"><div class="kicker">About LIA</div><p class="about-lead">LIA Procurement Inc. is a Canadian procurement firm focused on the public sector. Our work is built on a clear understanding of how government buyers evaluate suppliers and what it takes to deliver on a contract.</p><div class="about-copy"><p>We work with federal, provincial, and municipal clients and with the suppliers who want to serve them. Our clients range from established firms entering new markets to organizations pursuing their first government contract.</p><p>Every engagement starts with fit. We match the right expertise to the right opportunity and stay involved through delivery.</p></div><p class="indigenous-note">LIA Procurement Inc. is an Indigenous-owned firm.</p></div><div class="facts reveal"><div class="fact"><strong>Three levels of government</strong><span>Federal, provincial, and municipal procurement experience.</span></div><div class="fact"><strong>Four core sectors</strong><span>Transportation, energy, security, and equipment and technology.</span></div><div class="fact"><strong>Full lifecycle support</strong><span>Strategy, bid preparation, contract management, and business development.</span></div></div></div></section>
+  <section id="contact"><div class="wrap contact-grid"><div class="reveal"><div class="kicker">Get in touch</div><h2>Tell us about the opportunity.</h2><p>Share a bit about your organization and what you are working on. A member of our team will reply within one business day.</p><div class="contact-details"><div><span class="label">Email</span><a href="mailto:procurement@liainc.ca">procurement@liainc.ca</a></div><div><span class="label">Office</span><span class="value">200 Bay Street, Toronto, Ontario M5J 2T6</span></div><div><span class="label">Website</span><a href="https://www.liainc.ca">www.liainc.ca</a></div></div></div>
+    <form class="inquiry reveal" id="inquiryForm" novalidate><input type="hidden" name="_subject" value="New inquiry from liainc.ca"><input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true"><div class="form-row"><div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required></div><div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required></div></div><div class="form-row"><div class="field"><label for="organization">Organization</label><input id="organization" name="organization" type="text" autocomplete="organization"></div><div class="field"><label for="sector">Sector of interest</label><select id="sector" name="sector"><option value="">Select a sector</option><option>Transportation</option><option>Energy</option><option>Security</option><option>Equipment &amp; Technology</option><option>More than one sector</option><option>Not sure yet</option></select></div></div><div class="field"><label for="service">Service needed</label><select id="service" name="service"><option value="">Select a service</option><option>Procurement Strategy</option><option>Bid Preparation</option><option>Contract Management</option><option>Business Development</option><option>Other</option></select></div><div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Briefly describe the opportunity, solicitation, or question."></textarea></div><div class="form-foot"><button type="submit" class="btn" id="submitBtn">Send inquiry</button><span class="form-note">We reply within one business day.</span></div><div class="form-status" id="formStatus" role="status" aria-live="polite"></div></form>
+  </div></section>
 </main>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <div>
-        <a href="#home" class="brand">
-          <span class="brand-mark" data-brand-mark>
-            <span>LIA</span>
-            <img src="-t-e-x-t_-t-o_-i-m-a-g-e-4e4.png" alt="" data-brand-img onerror="this.parentElement.classList.remove('has-logo')" onload="this.parentElement.classList.add('has-logo')">
-          </span>
-          <span class="brand-name">LIA Procurement Inc.</span>
-        </a>
-        <p>Public sector procurement strategy, bid preparation, and contract management across transportation, energy, security, and equipment and technology.</p>
-      </div>
-      <div>
-        <h4>Sectors</h4>
-        <ul>
-          <li><a href="#sectors">Transportation</a></li>
-          <li><a href="#sectors">Energy</a></li>
-          <li><a href="#sectors">Security</a></li>
-          <li><a href="#sectors">Equipment &amp; Technology</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:procurement@liainc.ca">procurement@liainc.ca</a></li>
-          <li>200 Bay Street<br>Toronto, ON M5J 2T6</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 LIA Procurement Inc. All rights reserved.</span>
-      <span>Indigenous-owned firm · Canada</span>
-    </div>
-  </div>
-</footer>
-
+<footer><div class="wrap"><div class="footer-top"><div><a href="#home" class="brand"><span class="brand-mark"><span>LIA</span><img src="-t-e-x-t_-t-o_-i-m-a-g-e-4e4.png" alt="" onerror="this.parentElement.classList.remove('has-logo')" onload="this.parentElement.classList.add('has-logo')"></span><span class="brand-name">LIA Procurement Inc.</span></a><p>Public sector procurement strategy, bid preparation, and contract management across transportation, energy, security, and equipment and technology.</p></div><div><h4>Sectors</h4><ul><li><a href="#sectors">Transportation</a></li><li><a href="#sectors">Energy</a></li><li><a href="#sectors">Security</a></li><li><a href="#sectors">Equipment &amp; Technology</a></li></ul></div><div><h4>Contact</h4><ul><li><a href="mailto:procurement@liainc.ca">procurement@liainc.ca</a></li><li>200 Bay Street<br>Toronto, ON M5J 2T6</li></ul></div></div><div class="footer-bottom"><span>© 2026 LIA Procurement Inc. All rights reserved.</span><span>Indigenous-owned firm · Canada</span></div></div></footer>
 <script>
-// ---- CONFIGURATION ----
-// Paste your form endpoint here (see setup notes). Submissions are emailed to your Outlook inbox.
-const FORM_ENDPOINT = 'https://formspree.io/f/myewobea';
-const FALLBACK_EMAIL = 'procurement@liainc.ca';
-
-// Sticky nav styling and mobile menu
-const menuBtn = document.getElementById('menuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-menuBtn.addEventListener('click', () => {
-  const open = mobileMenu.classList.toggle('open');
-  menuBtn.setAttribute('aria-expanded', open);
-});
-mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-  mobileMenu.classList.remove('open');
-  menuBtn.setAttribute('aria-expanded', 'false');
-}));
-
-// Contact form: send to the configured endpoint and show a clear result either way
-const form = document.getElementById('inquiryForm');
-const statusBox = document.getElementById('formStatus');
-const submitBtn = document.getElementById('submitBtn');
-
-function showStatus(type, text) {
-  statusBox.className = 'form-status show ' + type;
-  statusBox.textContent = text;
-}
-
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  // Honeypot: silently drop bot submissions
-  if (form.elements['_gotcha'].value) return;
-
-  const name = form.elements['name'].value.trim();
-  const email = form.elements['email'].value.trim();
-  const message = form.elements['message'].value.trim();
-  if (!name || !email) {
-    showStatus('err', 'Please enter your name and a valid email address.');
-    return;
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    showStatus('err', 'Please enter a valid email address.');
-    return;
-  }
-
-  if (FORM_ENDPOINT.includes('REPLACE_WITH')) {
-    showStatus('err', 'This form is not yet connected. Please email us directly at ' + FALLBACK_EMAIL + '.');
-    return;
-  }
-
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Sending…';
-  statusBox.className = 'form-status';
-
-  try {
-    const res = await fetch(FORM_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: new FormData(form)
-    });
-    if (res.ok) {
-      form.reset();
-      showStatus('ok', 'Thank you. Your inquiry has been received and a member of our team will reply within one business day.');
-    } else {
-      throw new Error('Request failed');
-    }
-  } catch (err) {
-    showStatus('err', 'Your message could not be sent. Please email us directly at ' + FALLBACK_EMAIL + '.');
-  } finally {
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Send inquiry';
-  }
-});
+const FORM_ENDPOINT='https://formspree.io/f/myewobea';
+const FALLBACK_EMAIL='procurement@liainc.ca';
+const menuBtn=document.getElementById('menuBtn');
+const mobileMenu=document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open);menuBtn.setAttribute('aria-label',open?'Close menu':'Open menu');});
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mobileMenu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.setAttribute('aria-label','Open menu');}));
+// Reveal content as it enters view; keep all content visible for reduced-motion preferences or older browsers.
+const revealItems=document.querySelectorAll('.reveal');
+if('IntersectionObserver'in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:.12});revealItems.forEach(item=>observer.observe(item));}else{revealItems.forEach(item=>item.classList.add('is-visible'));}
+// Autoplay is muted and inline; pause the decorative loop for reduced-motion preferences.
+const heroVideo=document.querySelector('.hero-video');
+if(heroVideo&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){heroVideo.pause();heroVideo.removeAttribute('autoplay');}
+const form=document.getElementById('inquiryForm');
+const statusBox=document.getElementById('formStatus');
+const submitBtn=document.getElementById('submitBtn');
+function showStatus(type,text){statusBox.className='form-status show '+type;statusBox.textContent=text;}
+form.addEventListener('submit',async e=>{e.preventDefault();if(form.elements['_gotcha'].value)return;const name=form.elements.name.value.trim();const email=form.elements.email.value.trim();if(!name||!email){showStatus('err','Please enter your name and a valid email address.');return;}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showStatus('err','Please enter a valid email address.');return;}if(FORM_ENDPOINT.includes('REPLACE_WITH')){showStatus('err','This form is not yet connected. Please email us directly at '+FALLBACK_EMAIL+'.');return;}submitBtn.disabled=true;submitBtn.textContent='Sending…';statusBox.className='form-status';try{const res=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)});if(res.ok){form.reset();showStatus('ok','Thank you. Your inquiry has been received and a member of our team will reply within one business day.');}else{throw new Error('Request failed');}}catch(err){showStatus('err','Your message could not be sent. Please email us directly at '+FALLBACK_EMAIL+'.');}finally{submitBtn.disabled=false;submitBtn.textContent='Send inquiry';}});
 </script>
-
 </body>
 </html>
